@@ -1,0 +1,30 @@
+system@log240-20133-14:~$ cd /opt
+system@log240-20133-14:/opt$ sudo /bin/chown -R www-data:svnusers svn
+[sudo] password for system:
+system@log240-20133-14:/opt$ sudo /bin/chmod -R u+wrx,g+wrx,o-wrx svn
+system@log240-20133-14:/opt$ sudo /usr/bin/svnserve -d
+system@log240-20133-14:/opt$ sudo /usr/sbin/useradd client -G svnusers -c "Utilisateur client (BudgetPersonnel2000)" -m
+system@log240-20133-14:/opt$ sudo /usr/bin/passwd client
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+
+system@log240-20133-14:/opt$ sudo /usr/sbin/useradd asma -G svnusers -c "Utilisateur developpeur (MaintenancePlus)" -m
+system@log240-20133-14:/opt$ sudo /usr/bin/passwd asma
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+system@log240-20133-14:/opt$ sudo /usr/sbin/useradd quentin -G svnusers -c "Utilisateur developpeur (MaintenancePlus)" -m
+system@log240-20133-14:/opt$ sudo /usr/bin/passwd quentin
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+
+system@log240-20133-14:/opt$ cat /etc/passwd | grep "Utilisateur" | cut -d: -f1
+client
+asma
+quentin
+system@log240-20133-14:/opt$

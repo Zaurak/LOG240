@@ -1,0 +1,26 @@
+system@log240-20133-14:/opt$ tracd --version
+tracd 0.11.7
+system@log240-20133-14:/opt$ cd trac/conf/
+
+system@log240-20133-14:/opt/trac/conf$ sudo htpasswd trac.htpasswd asma
+[sudo] password for system:
+New password:
+Re-type new password:
+Adding password for user asma
+
+system@log240-20133-14:/opt/trac/conf$ sudo htpasswd trac.htpasswd quentin
+New password:
+Re-type new password:
+Adding password for user quentin
+
+system@log240-20133-14:/opt/trac/conf$ sudo htpasswd trac.htpasswd client
+New password:
+Re-type new password:
+Adding password for user client
+
+system@log240-20133-14:/opt/trac/conf$ cat trac.htpasswd | cut -d: -f1
+admin
+asma
+quentin
+client
+system@log240-20133-14:/opt/trac/conf$
