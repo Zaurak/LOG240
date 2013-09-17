@@ -1,17 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://docbook.org/xml/4.2/docbookx.dtd">
+
 <article>
-  <title>LOG240 - Rapport de Lab 1</title>
-  <author>
-	Asma ALIBERT &amp; Quentin MARQUES
-  </author>
-
+  <articleinfo>
+    <title>LOG240 - Rapport de Lab 1</title>
+    <authorgroup>
+      <author>
+        <firstname>Asma</firstname>
+        <surname>Alibert</surname>
+      </author>
+      <author>
+        <firstname>Quentin</firstname>
+        <surname>Marques</surname>
+      </author>
+    </authorgroup>
+  </articleinfo>
+  
   <section>
-	<title>Énoncé du sujet</title>
-	<para>
-		Recopier ici l'énoncé du sujet.
-	</para>
+  	<title>Énoncé du sujet</title>
+	  <para>
+		  Recopier ici l'énoncé du sujet.
+  	</para>
+  </section>
+  
+  <section>
+    <title>Screenshots</title>
+    <para>
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/01-ConnexionPutty.png"></graphic>
+        <caption>
+          Connexion SSH au serveur Ubuntu en utilisant Putty
+        </caption>
+      </screenshot>
+      
+      <screen>login as: <userinput>system</userinput>
+system@Log240-20133-14.logti.etsmtl.ca's password:
+<computeroutput>Linux log240-20133-14 2.6.32-51-generic-pae 
+#113-Ubuntu SMP Wed Aug 21 20:02:16 UTC 2013 i686 GNU/Linux
+Ubuntu 10.04.4 LTS
 
+Welcome to Ubuntu!
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Sep 16 15:48:01 EDT 2013
+
+  System load: 0.53              Memory usage: 18%   Processes:       75
+  Usage of /:  76.1% of 4.92GB   Swap usage:   0%    Users logged in: 0
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+6 packages can be updated.
+3 updates are security updates.
+
+New release 'precise' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Mon Sep 16 15:45:09 2013 from logti-a3324-19.ens.ad.etsmtl.ca</computeroutput>
+system@log240-20133-14:~$</screen>
+
+<note>
+  <para>
+    Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégé <symbol>$</symbol> par la suite.
+  </para>
+</note>
+      
+      <screen>$ <userinput><command>cd</command> /opt</userinput>
+$ <userinput><command>sudo /bin/chown</command> -R www-data:svnusers svn</userinput>
+[sudo] password for system:
+$ <userinput><command>sudo /bin/chmod</command> -R u+wrx,g+wrx,o-wrx svn</userinput>
+$ <userinput><command>sudo /usr/bin/svnserve</command> -d</userinput>
+$ <userinput><command>sudo /usr/sbin/useradd</command> client -G svnusers 
+  -c "Utilisateur client (BudgetPersonnel2000)" -m</userinput>
+$ <userinput><command>sudo /usr/bin/passwd</command> client</userinput>
+Enter new UNIX password:
+Retype new UNIX password:
+<computeroutput>passwd: password updated successfully</computeroutput></screen>
+
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/04-ImportSVN.png"></graphic>
+        <caption>
+          Exportation du dépot SVN en utilisant TortoiseSVN
+        </caption>
+      </screenshot>
+      
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/05-ImportSVNPassword.png"></graphic>
+        <caption>
+          Confirmation du mot de passe SVN
+        </caption>
+      </screenshot>
+      
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
+        <caption>
+          Résultat de l'exportation SVN
+        </caption>
+      </screenshot>
+      
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/07-TestExportSVN.png"></graphic>
+        <caption>
+          Vérification de l'importation SVN
+        </caption>
+      </screenshot>
+      
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
+        <caption>
+          Succès du test d'importation
+        </caption>
+      </screenshot>
+      
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/10-TracLogin.png"></graphic>
+        <caption>
+          Connexion à l'interface web de Trac en admin
+        </caption>
+      </screenshot>
+      
+      <screenshot>
+        <graphic width="200px" fileref="screenshots/11-TracPermissions.png"></graphic>
+        <caption>
+          Modifications des permissions clients et développeurs
+        </caption>
+      </screenshot>
+      
+    </para>
   </section>
 
 </article>

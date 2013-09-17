@@ -1,4 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>LOG240 - Rapport de Lab 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="LOG240 - Rapport de Lab 1"><div class="titlepage"><div><div><h2 class="title"><a id="idp254368"></a>LOG240 - Rapport de Lab 1</h2></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="#idp258192">Énoncé du sujet</a></span></dt></dl></div><span class="author"></span><div class="section" title="Énoncé du sujet"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp258192"></a>Énoncé du sujet</h2></div></div></div><p>
-		Recopier ici l'énoncé du sujet.
-	</p></div></div></body></html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>LOG240 - Rapport de Lab 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="LOG240 - Rapport de Lab 1"><div class="titlepage"><div><div><h2 class="title"><a id="idm53712176"></a>LOG240 - Rapport de Lab 1</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Asma</span> <span class="surname">Alibert</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Quentin</span> <span class="surname">Marques</span></h3></div></div></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="#idp151776">Énoncé du sujet</a></span></dt><dt><span class="section"><a href="#idp153120">Screenshots</a></span></dt></dl></div><div class="section" title="Énoncé du sujet"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp151776"></a>Énoncé du sujet</h2></div></div></div><p>
+		  Recopier ici l'énoncé du sujet.
+  	</p></div><div class="section" title="Screenshots"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp153120"></a>Screenshots</h2></div></div></div><p>
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/01-ConnexionPutty.png" width="200" /></td></tr></table></div><div class="caption">
+          Connexion SSH au serveur Ubuntu en utilisant Putty
+        </div></div><p>
+      
+      </p><pre class="screen">login as: <strong class="userinput"><code>system</code></strong>
+system@Log240-20133-14.logti.etsmtl.ca's password:
+<code class="computeroutput">Linux log240-20133-14 2.6.32-51-generic-pae 
+#113-Ubuntu SMP Wed Aug 21 20:02:16 UTC 2013 i686 GNU/Linux
+Ubuntu 10.04.4 LTS
+
+Welcome to Ubuntu!
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Sep 16 15:48:01 EDT 2013
+
+  System load: 0.53              Memory usage: 18%   Processes:       75
+  Usage of /:  76.1% of 4.92GB   Swap usage:   0%    Users logged in: 0
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+6 packages can be updated.
+3 updates are security updates.
+
+New release 'precise' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Mon Sep 16 15:45:09 2013 from logti-a3324-19.ens.ad.etsmtl.ca</code>
+system@log240-20133-14:~$</pre><p>
+
+</p><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+    Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégé <span class="symbol">$</span> par la suite.
+  </p></div><p>
+      
+      </p><pre class="screen">$ <strong class="userinput"><code><span class="command"><strong>cd</strong></span> /opt</code></strong>
+$ <strong class="userinput"><code><span class="command"><strong>sudo /bin/chown</strong></span> -R www-data:svnusers svn</code></strong>
+[sudo] password for system:
+$ <strong class="userinput"><code><span class="command"><strong>sudo /bin/chmod</strong></span> -R u+wrx,g+wrx,o-wrx svn</code></strong>
+$ <strong class="userinput"><code><span class="command"><strong>sudo /usr/bin/svnserve</strong></span> -d</code></strong>
+$ <strong class="userinput"><code><span class="command"><strong>sudo /usr/sbin/useradd</strong></span> client -G svnusers 
+  -c "Utilisateur client (BudgetPersonnel2000)" -m</code></strong>
+$ <strong class="userinput"><code><span class="command"><strong>sudo /usr/bin/passwd</strong></span> client</code></strong>
+Enter new UNIX password:
+Retype new UNIX password:
+<code class="computeroutput">passwd: password updated successfully</code></pre><p>
+
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/04-ImportSVN.png" width="200" /></td></tr></table></div><div class="caption">
+          Exportation du dépot SVN en utilisant TortoiseSVN
+        </div></div><p>
+      
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/05-ImportSVNPassword.png" width="200" /></td></tr></table></div><div class="caption">
+          Confirmation du mot de passe SVN
+        </div></div><p>
+      
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/06-ImportSVNSuccess.png" width="200" /></td></tr></table></div><div class="caption">
+          Résultat de l'exportation SVN
+        </div></div><p>
+      
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/07-TestExportSVN.png" width="200" /></td></tr></table></div><div class="caption">
+          Vérification de l'importation SVN
+        </div></div><p>
+      
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/08-TestExportSVNSuccess.png" width="200" /></td></tr></table></div><div class="caption">
+          Succès du test d'importation
+        </div></div><p>
+      
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/10-TracLogin.png" width="200" /></td></tr></table></div><div class="caption">
+          Connexion à l'interface web de Trac en admin
+        </div></div><p>
+      
+      </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/11-TracPermissions.png" width="200" /></td></tr></table></div><div class="caption">
+          Modifications des permissions clients et développeurs
+        </div></div><p>
+      
+    </p></div></div></body></html>
