@@ -3,6 +3,7 @@ system@log240-20133-14:/opt$ sudo /bin/chown -R www-data:svnusers svn
 [sudo] password for system:
 system@log240-20133-14:/opt$ sudo /bin/chmod -R u+wrx,g+wrx,o-wrx svn
 system@log240-20133-14:/opt$ sudo /usr/bin/svnserve -d
+
 system@log240-20133-14:/opt$ sudo /usr/sbin/useradd client -G svnusers -c "Utilisateur client (BudgetPersonnel2000)" -m
 system@log240-20133-14:/opt$ sudo /usr/bin/passwd client
 Enter new UNIX password:

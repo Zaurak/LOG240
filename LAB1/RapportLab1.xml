@@ -118,25 +118,97 @@ system@log240-20133-14:~$</screen>
     </section>
     <section>
       <title>Gestionnaire de sources</title>
-        <para>
-      
-      
-        <screen>$ <userinput><command>cd</command> /opt</userinput>
+		<section>
+		  <title>Configuration de SVN</title>
+		<para>
+		  Pour assurer le suivi du code source, nous allons utiliser le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <filename>/opt</filename> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
+		</para>
+	  
+		<screen>$ <userinput><command>cd</command> /opt</userinput>
 $ <userinput><command>sudo /bin/chown</command> -R www-data:svnusers svn</userinput>
 [sudo] password for system:
 $ <userinput><command>sudo /bin/chmod</command> -R u+wrx,g+wrx,o-wrx svn</userinput>
 $ <userinput><command>sudo /usr/bin/svnserve</command> -d</userinput>
+		</screen>
+		
+		<para>
+		  On ajoute ensuite les différents utilisateurs:
+		  <variablelist>
+			<varlistentry>
+			  <term>client:</term>
+			  <listitem>
+				<para>L'utilisateur que notre client utilisera pour accèder au code</para>
+				<screen>
 $ <userinput><command>sudo /usr/sbin/useradd</command> client -G svnusers 
-  -c "Utilisateur client (BudgetPersonnel2000)" -m</userinput>
+-c "Utilisateur client (BudgetPersonnel2000)" -m</userinput>
 $ <userinput><command>sudo /usr/bin/passwd</command> client</userinput>
 Enter new UNIX password:
 Retype new UNIX password:
 <computeroutput>passwd: password updated successfully</computeroutput></screen>
+			  </listitem>
+			</varlistentry>
+			<varlistentry>
+			  <term>asma:</term>
+			  <listitem>
+				<para>L'utilisateur du développeur 1</para>
+				<screen>
+$ <userinput><command>sudo /usr/sbin/useradd</command> asma -G svnusers 
+-c "Utilisateur developpeur (MaintenancePlus)" -m</userinput>
+$ <userinput><command>sudo /usr/bin/passwd</command> asma</userinput>
+Enter new UNIX password:
+Retype new UNIX password:
+<computeroutput>passwd: password updated successfully</computeroutput></screen>
+			  </listitem>
+			</varlistentry>
+			<varlistentry>
+			  <term>quentin:</term>
+			  <listitem>
+				<para>L'utilisateur du développeur 2</para>
+				<screen>
+$ <userinput><command>sudo /usr/sbin/useradd</command> quentin -G svnusers 
+-c "Utilisateur developpeur (MaintenancePlus)" -m</userinput>
+$ <userinput><command>sudo /usr/bin/passwd</command> quentin</userinput>
+Enter new UNIX password:
+Retype new UNIX password:
+<computeroutput>passwd: password updated successfully</computeroutput></screen>
+			  </listitem>
+			</varlistentry>
+		  </variablelist>
+		  
+		  <important>
+			<para>
+			  Tout les mots de passes utilisés sont identiques aux noms des utilisateurs. Il est évident que ceci ne constitue pas une bonne pratique de sécurité mais, dans un soucis de simplification du rapport, nous avons décidé de faire ainsi.
+			</para>
+		  </important>
+		</para>
+		
+		<tip>
+		  <para>
+			Nous pouvons vérifier que ces utilisateurs ont bien été crées sur la VMware de la manière suivante:
+			<screen>$ <userinput><command>cat</command> /etc/passwd | grep "Utilisateur" | cut -d: -f1</userinput><computeroutput>
+client
+asma
+quentin</computeroutput>
+$</screen>
+		  </para>
+		</tip>
+		  </section>
+		  <section>
+			<title>Import/Export du code source vers SVN</title>
+		    <para>Nous avons envoyé le code source de FinanceJ sur le dépôt SVN nouvellement configuré. Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
+			<caution>
+			  <para>
+				Le vocabulaire de Subversion différe de celui couramment utilisé: 
+				L'importation SVN est un envoi depuis un poste local vers le serveur et inversement concernant l'exportation. 
+				Afin de lever l'ambiguïté, nous utiliserons les termes d'<emphasis>import/export SVN</emphasis> en opposition aux termes <emphasis>import/export</emphasis>.
+			  </para>
+			</caution>
+		  </para>
 
         <screenshot>
-          <graphic width="200px" fileref="screenshots/04-ImportSVN.png"></graphic>
+          <graphic width="300px" fileref="screenshots/04-ImportSVN.png"></graphic>
           <caption>
-            Exportation du dépot SVN en utilisant TortoiseSVN
+            Exportation (import SVN) du dépot en utilisant TortoiseSVN
           </caption>
         </screenshot>
         
@@ -148,25 +220,38 @@ Retype new UNIX password:
         </screenshot>
         
         <screenshot>
-          <graphic width="200px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
+          <graphic width="400px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
           <caption>
-            Résultat de l'exportation SVN
+            Résultat de l'exportation (import SVN)
+          </caption>
+        </screenshot>
+
+		<para>
+		  Nous vérifions ensuite que l'envoi a correctement fonctionné en essayant d'importer (export SVN) le code envoyé dans un second dossier en local.
+		  <note>
+		    <para>
+			  Nous aurions également pu effectuer un <command>ls</command> directement sur le serveur via PuTTY mais des restrictions sur les VMwares nous en empêchent.
+			</para>
+		  </note>
+		</para>
+
+        <screenshot>
+          <graphic width="300px" fileref="screenshots/07-TestExportSVN.png"></graphic>
+          <caption>
+            Vérification de l'importation (export SVN) dans le dossier <filename>Codebis</filename>
           </caption>
         </screenshot>
         
         <screenshot>
-          <graphic width="200px" fileref="screenshots/07-TestExportSVN.png"></graphic>
+          <graphic width="400px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
           <caption>
-            Vérification de l'importation SVN
+            Succès du test d'importation (export SVN) dans le dossier <filename>Codebis</filename>
           </caption>
         </screenshot>
-        
-        <screenshot>
-          <graphic width="200px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
-          <caption>
-            Succès du test d'importation
-          </caption>
-        </screenshot>
+	  </section>
+	</section>
+	<section>
+	  <title>Configuration de Trac</title>
         
         <screenshot>
           <graphic width="200px" fileref="screenshots/10-TracLogin.png"></graphic>
@@ -181,8 +266,6 @@ Retype new UNIX password:
             Modifications des permissions clients et développeurs
           </caption>
         </screenshot>
-      
-      </para>
     </section>
   </section>
 </article>
