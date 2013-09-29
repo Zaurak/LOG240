@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>LOG240 - Rapport de Lab 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="LOG240 - Rapport de Lab 1"><div class="titlepage"><div><div><h2 class="title"><a id="idp297584"></a>LOG240 - Rapport de Lab 1</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Asma</span> <span class="surname">Alibert</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Quentin</span> <span class="surname">Marques</span></h3></div></div></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="#idp304096">Énoncé du sujet</a></span></dt><dt><span class="section"><a href="#idp351024">Installation de l'environnement</a></span></dt><dd><dl><dt><span class="section"><a href="#idp351712">Connexion à la machine virtuelle VMware</a></span></dt><dt><span class="section"><a href="#idp4511248">Gestionnaire de sources</a></span></dt><dt><span class="section"><a href="#idp220240">Configuration de Trac</a></span></dt></dl></dd></dl></div><div class="section" title="Énoncé du sujet"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp304096"></a>Énoncé du sujet</h2></div></div></div><p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>LOG240 - Rapport de Lab 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="LOG240 - Rapport de Lab 1"><div class="titlepage"><div><div><h2 class="title"><a id="idp4635168"></a>LOG240 - Rapport de Lab 1</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Asma</span> <span class="surname">Alibert</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Quentin</span> <span class="surname">Marques</span></h3></div></div></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="#idp4641392">Énoncé du sujet</a></span></dt><dt><span class="section"><a href="#idp425424">Installation de l'environnement</a></span></dt><dd><dl><dt><span class="section"><a href="#idp426112">Connexion à la machine virtuelle VMware</a></span></dt><dt><span class="section"><a href="#idp302480">Gestionnaire de sources</a></span></dt><dt><span class="section"><a href="#idp352000">Configuration de Trac</a></span></dt></dl></dd></dl></div><div class="section" title="Énoncé du sujet"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp4641392"></a>Énoncé du sujet</h2></div></div></div><p>
 		  Recopier ici l'énoncé du sujet.
-  	</p></div><div class="section" title="Installation de l'environnement"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp351024"></a>Installation de l'environnement</h2></div></div></div><div class="section" title="Connexion à la machine virtuelle VMware"><div class="titlepage"><div><div><h3 class="title"><a id="idp351712"></a>Connexion à la machine virtuelle VMware</h3></div></div></div><p>
+  	</p></div><div class="section" title="Installation de l'environnement"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp425424"></a>Installation de l'environnement</h2></div></div></div><div class="section" title="Connexion à la machine virtuelle VMware"><div class="titlepage"><div><div><h3 class="title"><a id="idp426112"></a>Connexion à la machine virtuelle VMware</h3></div></div></div><p>
         On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire étant réalisé sous environnement Windows, nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
-        </p><div class="variablelist"><dl><dt><span class="term">adresse IP:</span></dt><dd><p>Log240-20133-14.logti.etsmtl.ca</p></dd><dt><span class="term">port:</span></dt><dd><p>22</p></dd><dt><span class="term">protocol:</span></dt><dd><p>SSH</p></dd></dl></div><p>
+        </p><div class="variablelist"><dl><dt><span class="term">adresse IP:</span></dt><dd><p>Log240-20133-14.logti.etsmtl.ca</p></dd><dt><span class="term">port:</span></dt><dd><p>22</p></dd><dt><span class="term">protocole:</span></dt><dd><p>SSH</p></dd></dl></div><p>
       </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="275"><tr><td><img src="screenshots/01-ConnexionPutty.png" width="275" /></td></tr></table></div><div class="caption">
           Connexion SSH au serveur Ubuntu en utilisant PuTTY
         </div></div><p>
@@ -40,8 +40,8 @@ system@log240-20133-14:~$</pre><div class="note" title="Note" style="margin-left
           Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégé <span class="symbol">$</span> par la suite.
         </p></div><p>
         On constate que la machine virtuelle est correctement lancée et en état de fonctionner.
-      </p></div><div class="section" title="Gestionnaire de sources"><div class="titlepage"><div><div><h3 class="title"><a id="idp4511248"></a>Gestionnaire de sources</h3></div></div></div><div class="section" title="Configuration de SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp4511968"></a>Configuration de SVN</h4></div></div></div><p>
-		  Pour assurer le suivi du code source, nous allons utiliser le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <code class="filename">/opt</code> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
+      </p></div><div class="section" title="Gestionnaire de sources"><div class="titlepage"><div><div><h3 class="title"><a id="idp302480"></a>Gestionnaire de sources</h3></div></div></div><div class="section" title="Configuration de SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp303152"></a>Configuration de SVN</h4></div></div></div><p>
+		  Pour assurer le suivi du code source, nous utilisons le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <code class="filename">/opt</code> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
 		</p><pre class="screen">$ <strong class="userinput"><code><span class="command"><strong>cd</strong></span> /opt</code></strong>
 $ <strong class="userinput"><code><span class="command"><strong>sudo /bin/chown</strong></span> -R www-data:svnusers svn</code></strong>
 [sudo] password for system:
@@ -77,9 +77,10 @@ Retype new UNIX password:
 			</p><pre class="screen">$ <strong class="userinput"><code><span class="command"><strong>cat</strong></span> /etc/passwd | grep "Utilisateur" | cut -d: -f1</code></strong><code class="computeroutput">
 client
 asma
-quentin</code>
-$</pre><p>
-		  </p></div></div><div class="section" title="Import/Export du code source vers SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp203664"></a>Import/Export du code source vers SVN</h4></div></div></div><p>Nous avons envoyé le code source de FinanceJ sur le dépôt SVN nouvellement configuré. Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
+quentin</code></pre><p>
+		  </p></div></div><div class="section" title="Import/Export du code source vers SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp332416"></a>Import/Export du code source vers SVN</h4></div></div></div><p>Nous envoyons le code source de FinanceJ sur le dépôt SVN nouvellement configuré. 
+			Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
+			Dans un premier temps, nous créons un dossier <code class="filename">Code</code> contenant les dossiers <code class="filename">branches</code>, <code class="filename">tags</code> et <code class="filename">trunk</code>. Nous avons ajouté à ce dernier dossier les codes sources du projet FinanceJ.
 			</p><div class="caution" title="Caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
 				Le vocabulaire de Subversion différe de celui couramment utilisé: 
 				L'importation SVN est un envoi depuis un poste local vers le serveur et inversement concernant l'exportation. 
@@ -98,8 +99,43 @@ $</pre><p>
 			</p></div><p>
 		</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="300"><tr><td><img src="screenshots/07-TestExportSVN.png" width="300" /></td></tr></table></div><div class="caption">
             Vérification de l'importation (export SVN) dans le dossier <code class="filename">Codebis</code></div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/08-TestExportSVNSuccess.png" width="400" /></td></tr></table></div><div class="caption">
-            Succès du test d'importation (export SVN) dans le dossier <code class="filename">Codebis</code></div></div></div></div><div class="section" title="Configuration de Trac"><div class="titlepage"><div><div><h3 class="title"><a id="idp220240"></a>Configuration de Trac</h3></div></div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/10-TracLogin.png" width="200" /></td></tr></table></div><div class="caption">
+            Succès du test d'importation (export SVN) dans le dossier <code class="filename">Codebis</code></div></div></div></div><div class="section" title="Configuration de Trac"><div class="titlepage"><div><div><h3 class="title"><a id="idp352000"></a>Configuration de Trac</h3></div></div></div><p>
+		  Nous avons utilisé Trac, un système minimaliste de bug tracking et de wiki permettant la suivi de projet de développement.
+		  Tout d'abord, nous avons vérifié que Trac était correctement installé avec la bonne version:
+		</p><pre class="screen">$ <strong class="userinput"><code><span class="command"><strong>tracd</strong></span> --version</code></strong>
+<code class="computeroutput">tracd 0.11.7</code></pre><p>Nous créons ensuite les 3 utilisateurs Trac de la manière suivante:</p><pre class="screen">
+$ <strong class="userinput"><code><span class="command"><strong>cd</strong></span> trac/conf/</code></strong>
+$ <strong class="userinput"><code><span class="command"><strong>sudo htpasswd</strong></span> trac.htpasswd client</code></strong>
+<code class="computeroutput">New password:
+Re-type new password:
+Adding password for user client
+</code></pre><pre class="screen">
+$ <strong class="userinput"><code><span class="command"><strong>sudo htpasswd</strong></span> trac.htpasswd asma</code></strong>
+<code class="computeroutput">New password:
+Re-type new password:
+Adding password for user asma
+</code></pre><pre class="screen">
+$ <strong class="userinput"><code><span class="command"><strong>sudo htpasswd</strong></span> trac.htpasswd quentin</code></strong>
+<code class="computeroutput">New password:
+Re-type new password:
+Adding password for user quentin
+</code></pre><div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>Nous pouvons vérifier que les utilisateurs ont correctement été rajouté de la manière suivante:</p><pre class="screen">
+$ <strong class="userinput"><code><span class="command"><strong>cat</strong></span> trac.htpasswd | cut -d: -f1</code></strong>
+<code class="computeroutput">admin
+asma
+quentin
+client</code></pre></div><p>
+		  Nous nous sommes ensuite connecter à l'interface web de Trac. Nous nous sommes connecté en tant qu'administrateur avec les identifiants par défaut suivants:
+		  </p><div class="variablelist"><dl><dt><span class="term">login:</span></dt><dd><p>admin</p></dd><dt><span class="term">password:</span></dt><dd><p>admin</p></dd></dl></div><p>
+		</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/10-TracLogin.png" width="400" /></td></tr></table></div><div class="caption">
             Connexion à l'interface web de Trac en admin
-          </div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/11-TracPermissions.png" width="200" /></td></tr></table></div><div class="caption">
+          </div></div><p>
+		  Nous avons ensuite définit les permissions de chaque utilisateur de Trac en suivant les contraintes suivantes:
+		  </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">Il n'y a qu'un seul développeur ayant les droits d'administrateur (asma)</li><li class="listitem">Les développeurs doivent avoir accès à la plupart des fonctionnalités exceptés les tâches d'administration</li><li class="listitem">Le client peut uniquement consulter Trac et créer des tickets pour remonter des anomalies aux développeurs</li></ul></div><p>
+		</p><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+		    Afin d'éviter de redéfinir chaque permission pour chaque nouvel utilisateur éventuel, nous avons décidé de créer deux groupes de permissions:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">developpers</li><li class="listitem">clients</li></ul></div><p>
+			Ceci nous permet d'ajouter simplement des developpeurs ou des comptes clients tout en conservant des permissions cohérentes.
+		  </p></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/11-TracPermissions.png" width="400" /></td></tr></table></div><div class="caption">
             Modifications des permissions clients et développeurs
           </div></div></div></div></div></body></html>

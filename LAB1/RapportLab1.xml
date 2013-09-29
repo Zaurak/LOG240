@@ -43,7 +43,7 @@
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>protocol:</term>
+            <term>protocole:</term>
             <listitem>
               <para>SSH</para>
             </listitem>
@@ -121,7 +121,7 @@ system@log240-20133-14:~$</screen>
 		<section>
 		  <title>Configuration de SVN</title>
 		<para>
-		  Pour assurer le suivi du code source, nous allons utiliser le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <filename>/opt</filename> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
+		  Pour assurer le suivi du code source, nous utilisons le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <filename>/opt</filename> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
 		</para>
 	  
 		<screen>$ <userinput><command>cd</command> /opt</userinput>
@@ -188,14 +188,15 @@ Retype new UNIX password:
 			<screen>$ <userinput><command>cat</command> /etc/passwd | grep "Utilisateur" | cut -d: -f1</userinput><computeroutput>
 client
 asma
-quentin</computeroutput>
-$</screen>
+quentin</computeroutput></screen>
 		  </para>
 		</tip>
 		  </section>
 		  <section>
 			<title>Import/Export du code source vers SVN</title>
-		    <para>Nous avons envoyé le code source de FinanceJ sur le dépôt SVN nouvellement configuré. Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
+		    <para>Nous envoyons le code source de FinanceJ sur le dépôt SVN nouvellement configuré. 
+			Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
+			Dans un premier temps, nous créons un dossier <filename>Code</filename> contenant les dossiers <filename>branches</filename>, <filename>tags</filename> et <filename>trunk</filename>. Nous avons ajouté à ce dernier dossier les codes sources du projet FinanceJ.
 			<caution>
 			  <para>
 				Le vocabulaire de Subversion différe de celui couramment utilisé: 
@@ -252,16 +253,90 @@ $</screen>
 	</section>
 	<section>
 	  <title>Configuration de Trac</title>
-        
-        <screenshot>
-          <graphic width="200px" fileref="screenshots/10-TracLogin.png"></graphic>
+        <para>
+		  Nous avons utilisé Trac, un système minimaliste de bug tracking et de wiki permettant la suivi de projet de développement.
+		  Tout d'abord, nous avons vérifié que Trac était correctement installé avec la bonne version:
+		</para>
+		<screen>$ <userinput><command>tracd</command> --version</userinput>
+<computeroutput>tracd 0.11.7</computeroutput></screen>
+
+        <para>Nous créons ensuite les 3 utilisateurs Trac de la manière suivante:</para>
+		<screen>
+$ <userinput><command>cd</command> trac/conf/</userinput>
+$ <userinput><command>sudo htpasswd</command> trac.htpasswd client</userinput>
+<computeroutput>New password:
+Re-type new password:
+Adding password for user client
+</computeroutput></screen>
+
+		<screen>
+$ <userinput><command>sudo htpasswd</command> trac.htpasswd asma</userinput>
+<computeroutput>New password:
+Re-type new password:
+Adding password for user asma
+</computeroutput></screen>
+
+		<screen>
+$ <userinput><command>sudo htpasswd</command> trac.htpasswd quentin</userinput>
+<computeroutput>New password:
+Re-type new password:
+Adding password for user quentin
+</computeroutput></screen>
+
+		<tip>
+		  <para>Nous pouvons vérifier que les utilisateurs ont correctement été rajouté de la manière suivante:</para>
+		  <screen>
+$ <userinput><command>cat</command> trac.htpasswd | cut -d: -f1</userinput>
+<computeroutput>admin
+asma
+quentin
+client</computeroutput></screen>
+		</tip>
+
+		<para>
+		  Nous nous sommes ensuite connecter à l'interface web de Trac. Nous nous sommes connecté en tant qu'administrateur avec les identifiants par défaut suivants:
+		  <variablelist>
+            <varlistentry>
+              <term>login:</term>
+              <listitem>
+                <para>admin</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>password:</term>
+              <listitem>
+                <para>admin</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+		</para>
+		<screenshot>
+          <graphic width="400px" fileref="screenshots/10-TracLogin.png"></graphic>
           <caption>
             Connexion à l'interface web de Trac en admin
           </caption>
         </screenshot>
-        
+
+		<para>
+		  Nous avons ensuite définit les permissions de chaque utilisateur de Trac en suivant les contraintes suivantes:
+		  <itemizedlist>
+			<listitem>Il n'y a qu'un seul développeur ayant les droits d'administrateur (asma)</listitem>
+			<listitem>Les développeurs doivent avoir accès à la plupart des fonctionnalités exceptés les tâches d'administration</listitem>
+			<listitem>Le client peut uniquement consulter Trac et créer des tickets pour remonter des anomalies aux développeurs</listitem>
+		  </itemizedlist>
+		</para>
+		<note>
+		  <para>
+		    Afin d'éviter de redéfinir chaque permission pour chaque nouvel utilisateur éventuel, nous avons décidé de créer deux groupes de permissions:
+			<itemizedlist>
+			  <listitem>developpers</listitem>
+			  <listitem>clients</listitem>
+			</itemizedlist>
+			Ceci nous permet d'ajouter simplement des developpeurs ou des comptes clients tout en conservant des permissions cohérentes.
+		  </para>
+		</note>
         <screenshot>
-          <graphic width="200px" fileref="screenshots/11-TracPermissions.png"></graphic>
+          <graphic width="400px" fileref="screenshots/11-TracPermissions.png"></graphic>
           <caption>
             Modifications des permissions clients et développeurs
           </caption>
