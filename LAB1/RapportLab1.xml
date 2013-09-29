@@ -252,7 +252,9 @@ quentin</computeroutput></screen>
 	  </section>
 	</section>
 	<section>
-	  <title>Configuration de Trac</title>
+	  <title>Système de suivi de projet</title>
+	  <section>
+	    <title>Configuration de Trac</title>
         <para>
 		  Nous avons utilisé Trac, un système minimaliste de bug tracking et de wiki permettant la suivi de projet de développement.
 		  Tout d'abord, nous avons vérifié que Trac était correctement installé avec la bonne version:
@@ -292,7 +294,9 @@ asma
 quentin
 client</computeroutput></screen>
 		</tip>
-
+		</section>
+		<section>
+		  <title>Gestion des permissions de Trac</title>
 		<para>
 		  Nous nous sommes ensuite connecter à l'interface web de Trac. Nous nous sommes connecté en tant qu'administrateur avec les identifiants par défaut suivants:
 		  <variablelist>
@@ -341,6 +345,34 @@ client</computeroutput></screen>
             Modifications des permissions clients et développeurs
           </caption>
         </screenshot>
-    </section>
+		</section>
+		<section>
+		  <title>Fonctionnalités de Trac</title>
+		  <section>
+		    <title>Tickets</title>
+			<para>
+		      Les tickets dans Trac peuvent être utilisés pour assigner des tâches de projet, pour faire des requêtes, des reports de bugs et du support logiciel.
+		  	  Ici nous avons créé 2 requêtes / tickets / tâches. À l’aide de Trac, nous avons la possibilité de:
+			  <itemizedlist>
+			    <listitem>Définir la priorité de la tâche</listitem>
+				<listitem>Préciser le composant affecté</listitem>
+				<listitem>Estimer le nombre d'heures pour la tâche</listitem>
+				<listitem>Préciser la version</listitem>
+				<listitem>Ajouter des commentaires</listitem>
+				<listitem>Joindre des fichiers</listitem>
+				<listitem>etc.</listitem>
+			  </itemizedlist>
+			</para>
+			<screenshot>
+			  <graphic width="400px" fileref="screenshots/12-TracTicket1.png"></graphic>
+			  <graphic width="400px" fileref="screenshots/13-TracTicket2.png"></graphic>
+			  <caption>
+				Création de tickets Trac
+			  </caption>
+			  
+			</screenshot>
+		  </section><!-- section Tickets -->
+		</section><!-- section Fonctionnalités de Trac -->
+    </section><!-- section ? -->
   </section>
 </article>
