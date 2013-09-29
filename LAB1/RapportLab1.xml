@@ -369,10 +369,103 @@ client</computeroutput></screen>
 			  <caption>
 				Création de tickets Trac
 			  </caption>
-			  
 			</screenshot>
 		  </section><!-- section Tickets -->
+		  <section>
+		    <title>Composants</title>
+			<para>
+			  Les composants sont les systèmes/modules qui peuvent être affectés par des problèmes et donc être concernés par les tickets.
+			  Nous avons crée 2 composants:
+			  <itemizedlist>
+			    <listitem>code</listitem>
+				<listitem>site web</listitem>
+			  </itemizedlist>
+			</para>
+			<screenshot>
+			  <graphic width="400px" fileref="screenshots/14-TracComposant1.png"></graphic>
+			  <graphic width="400px" fileref="screenshots/15-TracComposant2.png"></graphic>
+			  <caption>
+					Création de composants Trac
+			  </caption>
+			</screenshot>
+		  </section><!-- section Composants -->
+		  <section>
+		    <title>Milestones</title>
+			<para>
+			  Les milestones sont les étapes importantes de la maintenance du projet.
+			</para>
+				<screenshot>
+					<graphic width="400px" fileref="screenshots/16-TracMilestones.png"></graphic>
+					<caption>
+						Création de milestones Trac
+					</caption>
+				</screenshot>
+		  </section><!-- section Milestones -->
+			<section>
+			  <title>Versions</title>
+				<para>
+				  Nous considerons que les versions représenteront les 5 laboratoires
+				</para>
+				<screenshot>
+					<graphic width="400px" fileref="screenshots/17-TracVersions.png"></graphic>
+					<caption>
+						Création de versions Trac
+					</caption>
+				</screenshot>
+			</section> <!-- section Versions -->
 		</section><!-- section Fonctionnalités de Trac -->
-    </section><!-- section ? -->
+    </section><!-- section Systeme de suivi de projet -->
+		<section>
+		  <title>Gestionnaire de projet</title>
+			<section>
+			  <title>Configuration Maven</title>
+				<para>
+					Nous avons déplacé le fichier <filename>settings.xml</filename> fourni dans le répertoire <filename>C:\Documents and Settings\am03450\.m2\</filename>
+					Nous avons configurer le fichier <filename>pom.xml</filename> puis nous l'avons exécuté. Maven a alors compilé et exécuté le projet.
+					Maven pouvant générer un site web du projet à partir des sources, nous avons configuré le fichier pom.xml pour ajouter un plugin permettant la génération de rapports.
+					Maven permet également de générer des rapports d’analyse de la qualité du code source:
+					<itemizedlist>
+						<listitem>PMD qui analyse la qualité du code source Java</listitem>
+						<listitem>CheckStyle permet de vérifier le style du code source</listitem>
+					  <listitem>QALab permet de récupérer les rapports de PMD et CheckStyle au cours du temps</listitem>
+					</itemizedlist>
+				</para>
+				<para>
+					Nous avons ensuite configuré Maven afin qu’il puisse ajouter au site web du projet les informations provenant de Trac et SVN. 
+					Pour faire cela, nous avons ajouté des plugins au fichier <filename>settings.xml</filename> ainsi qu’au <filename>pom.xml</filename>.
+					Les rapports produits par QALab sont générés sur le site web du projet par Maven dans la section "Projects Reports".
+				</para>
+				<screenshot>
+					<graphic width="200px" fileref="screenshots/18-MavenCompilation.png"></graphic>
+					<caption>
+						Compilation du projet FinanceJ par Maven
+					</caption>
+				</screenshot>
+				<screenshot>
+					<graphic width="200px" fileref="screenshots/19-Application.png"></graphic>
+					<caption>
+						Code compilé et exécuté par Maven
+					</caption>
+				</screenshot>
+				<screenshot>
+					<graphic width="200px" fileref="screenshots/20-MavenCompilationWebsite.png"></graphic>
+					<caption>
+						Compilation du site web par Maven
+					</caption>
+				</screenshot>
+				<screenshot>
+					<graphic width="400px" fileref="screenshots/21-MavenWebsite.png"></graphic>
+					<caption>
+						Site web générés par Maven
+					</caption>
+				</screenshot>
+				<screenshot>
+					<graphic width="400px" fileref="screenshots/22-MavenReports.png"></graphic>
+					<caption>
+						Rapports générés disponible sur le site web généré de Maven
+					</caption>
+				</screenshot>
+			</section><!-- section configuration Maven -->
+		</section><!-- section Maven -->
   </section>
 </article>
