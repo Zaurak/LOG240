@@ -24,15 +24,64 @@
   </section>
   
   <section>
-    <title>Screenshots</title>
-    <para>
+    <title>Installation de l'environnement</title>
+    <section>
+      <title>Connexion à la machine virtuelle VMware</title>
+      <para>
+        On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire étant réalisé sous environnement Windows, nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
+        <variablelist>
+          <varlistentry>
+            <term>adresse IP:</term>
+            <listitem>
+              <para>Log240-20133-14.logti.etsmtl.ca</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>port:</term>
+            <listitem>
+              <para>22</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>protocol:</term>
+            <listitem>
+              <para>SSH</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+        
       <screenshot>
-        <graphic width="200px" fileref="screenshots/01-ConnexionPutty.png"></graphic>
+        <graphic width="275px" fileref="screenshots/01-ConnexionPutty.png"></graphic>
         <caption>
-          Connexion SSH au serveur Ubuntu en utilisant Putty
+          Connexion SSH au serveur Ubuntu en utilisant PuTTY
         </caption>
-      </screenshot>
-      
+      </screenshot>      
+        
+      <para>
+        Un terminal s'ouvre alors et nous propose de nous connecter.
+        Nous utilisons les identifiants suivants:
+        <variablelist>
+          <varlistentry>
+            <term>login:</term>
+            <listitem>
+              <para>system</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>password:</term>
+            <listitem>
+              <para>SystemPass14</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+        <note>
+          <para>
+            Sur un terminal *NIX, les mots de passe ne s'affichent pas lors de la saisie par soucis de sécurité, c'est pourquoi la sortie console suivante en est dépourvu.
+          </para>
+        </note>
+      </para>
+
       <screen>login as: <userinput>system</userinput>
 system@Log240-20133-14.logti.etsmtl.ca's password:
 <computeroutput>Linux log240-20133-14 2.6.32-51-generic-pae 
@@ -58,13 +107,21 @@ Run 'do-release-upgrade' to upgrade to it.
 Last login: Mon Sep 16 15:45:09 2013 from logti-a3324-19.ens.ad.etsmtl.ca</computeroutput>
 system@log240-20133-14:~$</screen>
 
-<note>
-  <para>
-    Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégé <symbol>$</symbol> par la suite.
-  </para>
-</note>
+      <note>
+        <para>
+          Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégé <symbol>$</symbol> par la suite.
+        </para>
+      </note>
+      <para>
+        On constate que la machine virtuelle est correctement lancée et en état de fonctionner.
+      </para>
+    </section>
+    <section>
+      <title>Gestionnaire de sources</title>
+        <para>
       
-      <screen>$ <userinput><command>cd</command> /opt</userinput>
+      
+        <screen>$ <userinput><command>cd</command> /opt</userinput>
 $ <userinput><command>sudo /bin/chown</command> -R www-data:svnusers svn</userinput>
 [sudo] password for system:
 $ <userinput><command>sudo /bin/chmod</command> -R u+wrx,g+wrx,o-wrx svn</userinput>
@@ -76,56 +133,56 @@ Enter new UNIX password:
 Retype new UNIX password:
 <computeroutput>passwd: password updated successfully</computeroutput></screen>
 
-      <screenshot>
-        <graphic width="200px" fileref="screenshots/04-ImportSVN.png"></graphic>
-        <caption>
-          Exportation du dépot SVN en utilisant TortoiseSVN
-        </caption>
-      </screenshot>
+        <screenshot>
+          <graphic width="200px" fileref="screenshots/04-ImportSVN.png"></graphic>
+          <caption>
+            Exportation du dépot SVN en utilisant TortoiseSVN
+          </caption>
+        </screenshot>
+        
+        <screenshot>
+          <graphic width="200px" fileref="screenshots/05-ImportSVNPassword.png"></graphic>
+          <caption>
+            Confirmation du mot de passe SVN
+          </caption>
+        </screenshot>
+        
+        <screenshot>
+          <graphic width="200px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
+          <caption>
+            Résultat de l'exportation SVN
+          </caption>
+        </screenshot>
+        
+        <screenshot>
+          <graphic width="200px" fileref="screenshots/07-TestExportSVN.png"></graphic>
+          <caption>
+            Vérification de l'importation SVN
+          </caption>
+        </screenshot>
+        
+        <screenshot>
+          <graphic width="200px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
+          <caption>
+            Succès du test d'importation
+          </caption>
+        </screenshot>
+        
+        <screenshot>
+          <graphic width="200px" fileref="screenshots/10-TracLogin.png"></graphic>
+          <caption>
+            Connexion à l'interface web de Trac en admin
+          </caption>
+        </screenshot>
+        
+        <screenshot>
+          <graphic width="200px" fileref="screenshots/11-TracPermissions.png"></graphic>
+          <caption>
+            Modifications des permissions clients et développeurs
+          </caption>
+        </screenshot>
       
-      <screenshot>
-        <graphic width="200px" fileref="screenshots/05-ImportSVNPassword.png"></graphic>
-        <caption>
-          Confirmation du mot de passe SVN
-        </caption>
-      </screenshot>
-      
-      <screenshot>
-        <graphic width="200px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
-        <caption>
-          Résultat de l'exportation SVN
-        </caption>
-      </screenshot>
-      
-      <screenshot>
-        <graphic width="200px" fileref="screenshots/07-TestExportSVN.png"></graphic>
-        <caption>
-          Vérification de l'importation SVN
-        </caption>
-      </screenshot>
-      
-      <screenshot>
-        <graphic width="200px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
-        <caption>
-          Succès du test d'importation
-        </caption>
-      </screenshot>
-      
-      <screenshot>
-        <graphic width="200px" fileref="screenshots/10-TracLogin.png"></graphic>
-        <caption>
-          Connexion à l'interface web de Trac en admin
-        </caption>
-      </screenshot>
-      
-      <screenshot>
-        <graphic width="200px" fileref="screenshots/11-TracPermissions.png"></graphic>
-        <caption>
-          Modifications des permissions clients et développeurs
-        </caption>
-      </screenshot>
-      
-    </para>
+      </para>
+    </section>
   </section>
-
 </article>
