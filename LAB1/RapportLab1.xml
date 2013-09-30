@@ -28,7 +28,7 @@
     <section>
       <title>Connexion à la machine virtuelle VMware</title>
       <para>
-        On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire étant réalisé sous environnement Windows, nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
+        On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire est réalisé sous environnement Windows et nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
         <variablelist>
           <varlistentry>
             <term>adresse IP:</term>
@@ -77,7 +77,7 @@
         </variablelist>
         <note>
           <para>
-            Sur un terminal *NIX, les mots de passe ne s'affichent pas lors de la saisie par soucis de sécurité, c'est pourquoi la sortie console suivante en est dépourvu.
+            Sur un terminal UNIX, les mots de passe ne s'affichent pas lors de la saisie par soucis de sécurité, c'est pourquoi la sortie console suivante en est dépourvue.
           </para>
         </note>
       </para>
@@ -109,7 +109,7 @@ system@log240-20133-14:~$</screen>
 
       <note>
         <para>
-          Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégé <symbol>$</symbol> par la suite.
+          Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégée <symbol>$</symbol> par la suite.
         </para>
       </note>
       <para>
@@ -137,7 +137,7 @@ $ <userinput><command>sudo /usr/bin/svnserve</command> -d</userinput>
 			<varlistentry>
 			  <term>client:</term>
 			  <listitem>
-				<para>L'utilisateur que notre client utilisera pour accèder au code</para>
+				<para>L'utilisateur que notre client utilisera pour accéder au code</para>
 				<screen>
 $ <userinput><command>sudo /usr/sbin/useradd</command> client -G svnusers 
 -c "Utilisateur client (BudgetPersonnel2000)" -m</userinput>
@@ -199,9 +199,9 @@ quentin</computeroutput></screen>
 			Dans un premier temps, nous créons un dossier <filename>Code</filename> contenant les dossiers <filename>branches</filename>, <filename>tags</filename> et <filename>trunk</filename>. Nous avons ajouté à ce dernier dossier les codes sources du projet FinanceJ.
 			<caution>
 			  <para>
-				Le vocabulaire de Subversion différe de celui couramment utilisé: 
+				Le vocabulaire de TortoiseSVN diffère de celui couramment utilisé: 
 				L'importation SVN est un envoi depuis un poste local vers le serveur et inversement concernant l'exportation. 
-				Afin de lever l'ambiguïté, nous utiliserons les termes d'<emphasis>import/export SVN</emphasis> en opposition aux termes <emphasis>import/export</emphasis>.
+				Afin de lever l'ambiguïté, nous utiliserons les termes classiques <emphasis>import/export</emphasis>.
 			  </para>
 			</caution>
 		  </para>
@@ -209,7 +209,7 @@ quentin</computeroutput></screen>
         <screenshot>
           <graphic width="300px" fileref="screenshots/04-ImportSVN.png"></graphic>
           <caption>
-            Exportation (import SVN) du dépot en utilisant TortoiseSVN
+            Exportation du dépot en utilisant TortoiseSVN
           </caption>
         </screenshot>
         
@@ -223,12 +223,12 @@ quentin</computeroutput></screen>
         <screenshot>
           <graphic width="400px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
           <caption>
-            Résultat de l'exportation (import SVN)
+            Résultat de l'exportation
           </caption>
         </screenshot>
 
 		<para>
-		  Nous vérifions ensuite que l'envoi a correctement fonctionné en essayant d'importer (export SVN) le code envoyé dans un second dossier en local.
+		  Nous vérifions ensuite que l'envoi a correctement fonctionné en essayant d'importer le code envoyé dans un second dossier en local.
 		  <note>
 		    <para>
 			  Nous aurions également pu effectuer un <command>ls</command> directement sur le serveur via PuTTY mais des restrictions sur les VMwares nous en empêchent.
@@ -239,14 +239,14 @@ quentin</computeroutput></screen>
         <screenshot>
           <graphic width="300px" fileref="screenshots/07-TestExportSVN.png"></graphic>
           <caption>
-            Vérification de l'importation (export SVN) dans le dossier <filename>Codebis</filename>
+            Vérification de l'importation dans le dossier <filename>Codebis</filename>
           </caption>
         </screenshot>
         
         <screenshot>
           <graphic width="400px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
           <caption>
-            Succès du test d'importation (export SVN) dans le dossier <filename>Codebis</filename>
+            Succès du test d'importation dans le dossier <filename>Codebis</filename>
           </caption>
         </screenshot>
 	  </section>
@@ -286,7 +286,7 @@ Adding password for user quentin
 </computeroutput></screen>
 
 		<tip>
-		  <para>Nous pouvons vérifier que les utilisateurs ont correctement été rajouté de la manière suivante:</para>
+		  <para>Nous pouvons vérifier que les utilisateurs ont correctement été rajoutés de la manière suivante:</para>
 		  <screen>
 $ <userinput><command>cat</command> trac.htpasswd | cut -d: -f1</userinput>
 <computeroutput>admin
@@ -298,7 +298,7 @@ client</computeroutput></screen>
 		<section>
 		  <title>Gestion des permissions de Trac</title>
 		<para>
-		  Nous nous sommes ensuite connecter à l'interface web de Trac. Nous nous sommes connecté en tant qu'administrateur avec les identifiants par défaut suivants:
+		  Nous nous sommes ensuite connectés à l'interface web de Trac. Nous nous sommes connectés en tant qu'administrateur avec les identifiants par défaut suivants:
 		  <variablelist>
             <varlistentry>
               <term>login:</term>
@@ -336,7 +336,7 @@ client</computeroutput></screen>
 			  <listitem>developpers</listitem>
 			  <listitem>clients</listitem>
 			</itemizedlist>
-			Ceci nous permet d'ajouter simplement des developpeurs ou des comptes clients tout en conservant des permissions cohérentes.
+			Ceci nous permet d'ajouter simplement des développeurs ou des comptes clients tout en conservant des permissions cohérentes.
 		  </para>
 		</note>
         <screenshot>
@@ -421,7 +421,7 @@ client</computeroutput></screen>
 			  <title>Configuration Maven</title>
 				<para>
 					Nous avons déplacé le fichier <filename>settings.xml</filename> fourni dans le répertoire <filename>C:\Documents and Settings\am03450\.m2\</filename>
-					Nous avons configurer le fichier <filename>pom.xml</filename> puis nous l'avons exécuté. Maven a alors compilé et exécuté le projet.
+					Nous avons configuré le fichier <filename>pom.xml</filename> puis nous l'avons exécuté. Maven a alors compilé et exécuté le projet.
 					Maven pouvant générer un site web du projet à partir des sources, nous avons configuré le fichier pom.xml pour ajouter un plugin permettant la génération de rapports.
 					Maven permet également de générer des rapports d’analyse de la qualité du code source:
 					<itemizedlist>
@@ -462,7 +462,7 @@ client</computeroutput></screen>
 				<screenshot>
 					<graphic width="400px" fileref="screenshots/22-MavenReports.png"></graphic>
 					<caption>
-						Rapports générés disponible sur le site web généré de Maven
+						Rapports générés disponibles sur le site web
 					</caption>
 				</screenshot>
 			</section><!-- section configuration Maven -->

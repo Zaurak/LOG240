@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>LOG240 - Rapport de Lab 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="LOG240 - Rapport de Lab 1"><div class="titlepage"><div><div><h2 class="title"><a id="idm352"></a>LOG240 - Rapport de Lab 1</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Asma</span> <span class="surname">Alibert</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Quentin</span> <span class="surname">Marques</span></h3></div></div></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="#idp54018736">Énoncé du sujet</a></span></dt><dt><span class="section"><a href="#idp54020064">Installation de l'environnement</a></span></dt><dd><dl><dt><span class="section"><a href="#idp54020752">Connexion à la machine virtuelle VMware</a></span></dt><dt><span class="section"><a href="#idp54201824">Gestionnaire de sources</a></span></dt><dt><span class="section"><a href="#idp54003632">Système de suivi de projet</a></span></dt><dt><span class="section"><a href="#idp59017584">Gestionnaire de projet</a></span></dt></dl></dd></dl></div><div class="section" title="Énoncé du sujet"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp54018736"></a>Énoncé du sujet</h2></div></div></div><p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>LOG240 - Rapport de Lab 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="LOG240 - Rapport de Lab 1"><div class="titlepage"><div><div><h2 class="title"><a id="idp202096"></a>LOG240 - Rapport de Lab 1</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Asma</span> <span class="surname">Alibert</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Quentin</span> <span class="surname">Marques</span></h3></div></div></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="#idp208336">Énoncé du sujet</a></span></dt><dt><span class="section"><a href="#idp124432">Installation de l'environnement</a></span></dt><dd><dl><dt><span class="section"><a href="#idp125072">Connexion à la machine virtuelle VMware</a></span></dt><dt><span class="section"><a href="#idp81168">Gestionnaire de sources</a></span></dt><dt><span class="section"><a href="#idp4436960">Système de suivi de projet</a></span></dt><dt><span class="section"><a href="#idp5547264">Gestionnaire de projet</a></span></dt></dl></dd></dl></div><div class="section" title="Énoncé du sujet"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp208336"></a>Énoncé du sujet</h2></div></div></div><p>
 		  Recopier ici l'énoncé du sujet.
-  	</p></div><div class="section" title="Installation de l'environnement"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp54020064"></a>Installation de l'environnement</h2></div></div></div><div class="section" title="Connexion à la machine virtuelle VMware"><div class="titlepage"><div><div><h3 class="title"><a id="idp54020752"></a>Connexion à la machine virtuelle VMware</h3></div></div></div><p>
-        On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire étant réalisé sous environnement Windows, nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
+  	</p></div><div class="section" title="Installation de l'environnement"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idp124432"></a>Installation de l'environnement</h2></div></div></div><div class="section" title="Connexion à la machine virtuelle VMware"><div class="titlepage"><div><div><h3 class="title"><a id="idp125072"></a>Connexion à la machine virtuelle VMware</h3></div></div></div><p>
+        On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire est réalisé sous environnement Windows et nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
         </p><div class="variablelist"><dl><dt><span class="term">adresse IP:</span></dt><dd><p>Log240-20133-14.logti.etsmtl.ca</p></dd><dt><span class="term">port:</span></dt><dd><p>22</p></dd><dt><span class="term">protocole:</span></dt><dd><p>SSH</p></dd></dl></div><p>
       </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="275"><tr><td><img src="screenshots/01-ConnexionPutty.png" width="275" /></td></tr></table></div><div class="caption">
           Connexion SSH au serveur Ubuntu en utilisant PuTTY
@@ -11,7 +12,7 @@
         Nous utilisons les identifiants suivants:
         </p><div class="variablelist"><dl><dt><span class="term">login:</span></dt><dd><p>system</p></dd><dt><span class="term">password:</span></dt><dd><p>SystemPass14</p></dd></dl></div><p>
         </p><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
-            Sur un terminal *NIX, les mots de passe ne s'affichent pas lors de la saisie par soucis de sécurité, c'est pourquoi la sortie console suivante en est dépourvu.
+            Sur un terminal UNIX, les mots de passe ne s'affichent pas lors de la saisie par soucis de sécurité, c'est pourquoi la sortie console suivante en est dépourvue.
           </p></div><p>
       </p><pre class="screen">login as: <strong class="userinput"><code>system</code></strong>
 system@Log240-20133-14.logti.etsmtl.ca's password:
@@ -37,10 +38,10 @@ Run 'do-release-upgrade' to upgrade to it.
 
 Last login: Mon Sep 16 15:45:09 2013 from logti-a3324-19.ens.ad.etsmtl.ca</code>
 system@log240-20133-14:~$</pre><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
-          Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégé <span class="symbol">$</span> par la suite.
+          Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégée <span class="symbol">$</span> par la suite.
         </p></div><p>
         On constate que la machine virtuelle est correctement lancée et en état de fonctionner.
-      </p></div><div class="section" title="Gestionnaire de sources"><div class="titlepage"><div><div><h3 class="title"><a id="idp54201824"></a>Gestionnaire de sources</h3></div></div></div><div class="section" title="Configuration de SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp54202544"></a>Configuration de SVN</h4></div></div></div><p>
+      </p></div><div class="section" title="Gestionnaire de sources"><div class="titlepage"><div><div><h3 class="title"><a id="idp81168"></a>Gestionnaire de sources</h3></div></div></div><div class="section" title="Configuration de SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp81888"></a>Configuration de SVN</h4></div></div></div><p>
 		  Pour assurer le suivi du code source, nous utilisons le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <code class="filename">/opt</code> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
 		</p><pre class="screen">$ <strong class="userinput"><code><span class="command"><strong>cd</strong></span> /opt</code></strong>
 $ <strong class="userinput"><code><span class="command"><strong>sudo /bin/chown</strong></span> -R www-data:svnusers svn</code></strong>
@@ -49,7 +50,7 @@ $ <strong class="userinput"><code><span class="command"><strong>sudo /bin/chmod<
 $ <strong class="userinput"><code><span class="command"><strong>sudo /usr/bin/svnserve</strong></span> -d</code></strong>
 		</pre><p>
 		  On ajoute ensuite les différents utilisateurs:
-		  </p><div class="variablelist"><dl><dt><span class="term">client:</span></dt><dd><p>L'utilisateur que notre client utilisera pour accèder au code</p><pre class="screen">
+		  </p><div class="variablelist"><dl><dt><span class="term">client:</span></dt><dd><p>L'utilisateur que notre client utilisera pour accéder au code</p><pre class="screen">
 $ <strong class="userinput"><code><span class="command"><strong>sudo /usr/sbin/useradd</strong></span> client -G svnusers 
 -c "Utilisateur client (BudgetPersonnel2000)" -m</code></strong>
 $ <strong class="userinput"><code><span class="command"><strong>sudo /usr/bin/passwd</strong></span> client</code></strong>
@@ -78,28 +79,28 @@ Retype new UNIX password:
 client
 asma
 quentin</code></pre><p>
-		  </p></div></div><div class="section" title="Import/Export du code source vers SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp54127936"></a>Import/Export du code source vers SVN</h4></div></div></div><p>Nous envoyons le code source de FinanceJ sur le dépôt SVN nouvellement configuré. 
+		  </p></div></div><div class="section" title="Import/Export du code source vers SVN"><div class="titlepage"><div><div><h4 class="title"><a id="idp109536"></a>Import/Export du code source vers SVN</h4></div></div></div><p>Nous envoyons le code source de FinanceJ sur le dépôt SVN nouvellement configuré. 
 			Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
 			Dans un premier temps, nous créons un dossier <code class="filename">Code</code> contenant les dossiers <code class="filename">branches</code>, <code class="filename">tags</code> et <code class="filename">trunk</code>. Nous avons ajouté à ce dernier dossier les codes sources du projet FinanceJ.
 			</p><div class="caution" title="Caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
-				Le vocabulaire de Subversion différe de celui couramment utilisé: 
+				Le vocabulaire de TortoiseSVN diffère de celui couramment utilisé: 
 				L'importation SVN est un envoi depuis un poste local vers le serveur et inversement concernant l'exportation. 
-				Afin de lever l'ambiguïté, nous utiliserons les termes d'<span class="emphasis"><em>import/export SVN</em></span> en opposition aux termes <span class="emphasis"><em>import/export</em></span>.
+				Afin de lever l'ambiguïté, nous utiliserons les termes classiques <span class="emphasis"><em>import/export</em></span>.
 			  </p></div><p>
 		  </p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="300"><tr><td><img src="screenshots/04-ImportSVN.png" width="300" /></td></tr></table></div><div class="caption">
-            Exportation (import SVN) du dépot en utilisant TortoiseSVN
+            Exportation du dépot en utilisant TortoiseSVN
           </div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="200"><tr><td><img src="screenshots/05-ImportSVNPassword.png" width="200" /></td></tr></table></div><div class="caption">
             Confirmation du mot de passe SVN
           </div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/06-ImportSVNSuccess.png" width="400" /></td></tr></table></div><div class="caption">
-            Résultat de l'exportation (import SVN)
+            Résultat de l'exportation
           </div></div><p>
-		  Nous vérifions ensuite que l'envoi a correctement fonctionné en essayant d'importer (export SVN) le code envoyé dans un second dossier en local.
+		  Nous vérifions ensuite que l'envoi a correctement fonctionné en essayant d'importer le code envoyé dans un second dossier en local.
 		  </p><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 			  Nous aurions également pu effectuer un <span class="command"><strong>ls</strong></span> directement sur le serveur via PuTTY mais des restrictions sur les VMwares nous en empêchent.
 			</p></div><p>
 		</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="300"><tr><td><img src="screenshots/07-TestExportSVN.png" width="300" /></td></tr></table></div><div class="caption">
-            Vérification de l'importation (export SVN) dans le dossier <code class="filename">Codebis</code></div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/08-TestExportSVNSuccess.png" width="400" /></td></tr></table></div><div class="caption">
-            Succès du test d'importation (export SVN) dans le dossier <code class="filename">Codebis</code></div></div></div></div><div class="section" title="Système de suivi de projet"><div class="titlepage"><div><div><h3 class="title"><a id="idp54003632"></a>Système de suivi de projet</h3></div></div></div><div class="section" title="Configuration de Trac"><div class="titlepage"><div><div><h4 class="title"><a id="idp54004336"></a>Configuration de Trac</h4></div></div></div><p>
+            Vérification de l'importation dans le dossier <code class="filename">Codebis</code></div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/08-TestExportSVNSuccess.png" width="400" /></td></tr></table></div><div class="caption">
+            Succès du test d'importation dans le dossier <code class="filename">Codebis</code></div></div></div></div><div class="section" title="Système de suivi de projet"><div class="titlepage"><div><div><h3 class="title"><a id="idp4436960"></a>Système de suivi de projet</h3></div></div></div><div class="section" title="Configuration de Trac"><div class="titlepage"><div><div><h4 class="title"><a id="idp4437664"></a>Configuration de Trac</h4></div></div></div><p>
 		  Nous avons utilisé Trac, un système minimaliste de bug tracking et de wiki permettant la suivi de projet de développement.
 		  Tout d'abord, nous avons vérifié que Trac était correctement installé avec la bonne version:
 		</p><pre class="screen">$ <strong class="userinput"><code><span class="command"><strong>tracd</strong></span> --version</code></strong>
@@ -119,13 +120,13 @@ $ <strong class="userinput"><code><span class="command"><strong>sudo htpasswd</s
 <code class="computeroutput">New password:
 Re-type new password:
 Adding password for user quentin
-</code></pre><div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>Nous pouvons vérifier que les utilisateurs ont correctement été rajouté de la manière suivante:</p><pre class="screen">
+</code></pre><div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>Nous pouvons vérifier que les utilisateurs ont correctement été rajoutés de la manière suivante:</p><pre class="screen">
 $ <strong class="userinput"><code><span class="command"><strong>cat</strong></span> trac.htpasswd | cut -d: -f1</code></strong>
 <code class="computeroutput">admin
 asma
 quentin
-client</code></pre></div></div><div class="section" title="Gestion des permissions de Trac"><div class="titlepage"><div><div><h4 class="title"><a id="idp58982112"></a>Gestion des permissions de Trac</h4></div></div></div><p>
-		  Nous nous sommes ensuite connecter à l'interface web de Trac. Nous nous sommes connecté en tant qu'administrateur avec les identifiants par défaut suivants:
+client</code></pre></div></div><div class="section" title="Gestion des permissions de Trac"><div class="titlepage"><div><div><h4 class="title"><a id="idp5511792"></a>Gestion des permissions de Trac</h4></div></div></div><p>
+		  Nous nous sommes ensuite connectés à l'interface web de Trac. Nous nous sommes connectés en tant qu'administrateur avec les identifiants par défaut suivants:
 		  </p><div class="variablelist"><dl><dt><span class="term">login:</span></dt><dd><p>admin</p></dd><dt><span class="term">password:</span></dt><dd><p>admin</p></dd></dl></div><p>
 		</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/10-TracLogin.png" width="400" /></td></tr></table></div><div class="caption">
             Connexion à l'interface web de Trac en admin
@@ -135,32 +136,32 @@ client</code></pre></div></div><div class="section" title="Gestion des permissio
 		</p><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
 		    Afin d'éviter de redéfinir chaque permission pour chaque nouvel utilisateur éventuel, nous avons décidé de créer deux groupes de permissions:
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">developpers</li><li class="listitem">clients</li></ul></div><p>
-			Ceci nous permet d'ajouter simplement des developpeurs ou des comptes clients tout en conservant des permissions cohérentes.
+			Ceci nous permet d'ajouter simplement des développeurs ou des comptes clients tout en conservant des permissions cohérentes.
 		  </p></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/11-TracPermissions.png" width="400" /></td></tr></table></div><div class="caption">
             Modifications des permissions clients et développeurs
-          </div></div></div><div class="section" title="Fonctionnalités de Trac"><div class="titlepage"><div><div><h4 class="title"><a id="idp58996224"></a>Fonctionnalités de Trac</h4></div></div></div><div class="section" title="Tickets"><div class="titlepage"><div><div><h5 class="title"><a id="idp58996928"></a>Tickets</h5></div></div></div><p>
+          </div></div></div><div class="section" title="Fonctionnalités de Trac"><div class="titlepage"><div><div><h4 class="title"><a id="idp5525904"></a>Fonctionnalités de Trac</h4></div></div></div><div class="section" title="Tickets"><div class="titlepage"><div><div><h5 class="title"><a id="idp5526608"></a>Tickets</h5></div></div></div><p>
 		      Les tickets dans Trac peuvent être utilisés pour assigner des tâches de projet, pour faire des requêtes, des reports de bugs et du support logiciel.
 		  	  Ici nous avons créé 2 requêtes / tickets / tâches. À l’aide de Trac, nous avons la possibilité de:
 			  </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">Définir la priorité de la tâche</li><li class="listitem">Préciser le composant affecté</li><li class="listitem">Estimer le nombre d'heures pour la tâche</li><li class="listitem">Préciser la version</li><li class="listitem">Ajouter des commentaires</li><li class="listitem">Joindre des fichiers</li><li class="listitem">etc.</li></ul></div><p>
 			</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/12-TracTicket1.png" width="400" /></td></tr></table></div><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/13-TracTicket2.png" width="400" /></td></tr></table></div><div class="caption">
 				Création de tickets Trac
-			  </div></div></div><div class="section" title="Composants"><div class="titlepage"><div><div><h5 class="title"><a id="idp59004928"></a>Composants</h5></div></div></div><p>
+			  </div></div></div><div class="section" title="Composants"><div class="titlepage"><div><div><h5 class="title"><a id="idp5534608"></a>Composants</h5></div></div></div><p>
 			  Les composants sont les systèmes/modules qui peuvent être affectés par des problèmes et donc être concernés par les tickets.
 			  Nous avons crée 2 composants:
 			  </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">code</li><li class="listitem">site web</li></ul></div><p>
 			</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/14-TracComposant1.png" width="400" /></td></tr></table></div><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/15-TracComposant2.png" width="400" /></td></tr></table></div><div class="caption">
 					Création de composants Trac
-			  </div></div></div><div class="section" title="Milestones"><div class="titlepage"><div><div><h5 class="title"><a id="idp59010352"></a>Milestones</h5></div></div></div><p>
+			  </div></div></div><div class="section" title="Milestones"><div class="titlepage"><div><div><h5 class="title"><a id="idp5540032"></a>Milestones</h5></div></div></div><p>
 			  Les milestones sont les étapes importantes de la maintenance du projet.
 			</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/16-TracMilestones.png" width="400" /></td></tr></table></div><div class="caption">
 						Création de milestones Trac
-					</div></div></div><div class="section" title="Versions"><div class="titlepage"><div><div><h5 class="title"><a id="idp59013552"></a>Versions</h5></div></div></div><p>
+					</div></div></div><div class="section" title="Versions"><div class="titlepage"><div><div><h5 class="title"><a id="idp5543232"></a>Versions</h5></div></div></div><p>
 				  Nous considerons que les versions représenteront les 5 laboratoires
 				</p><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/17-TracVersions.png" width="400" /></td></tr></table></div><div class="caption">
 						Création de versions Trac
-					</div></div></div></div></div><div class="section" title="Gestionnaire de projet"><div class="titlepage"><div><div><h3 class="title"><a id="idp59017584"></a>Gestionnaire de projet</h3></div></div></div><div class="section" title="Configuration Maven"><div class="titlepage"><div><div><h4 class="title"><a id="idp59018224"></a>Configuration Maven</h4></div></div></div><p>
+					</div></div></div></div></div><div class="section" title="Gestionnaire de projet"><div class="titlepage"><div><div><h3 class="title"><a id="idp5547264"></a>Gestionnaire de projet</h3></div></div></div><div class="section" title="Configuration Maven"><div class="titlepage"><div><div><h4 class="title"><a id="idp5547904"></a>Configuration Maven</h4></div></div></div><p>
 					Nous avons déplacé le fichier <code class="filename">settings.xml</code> fourni dans le répertoire <code class="filename">C:\Documents and Settings\am03450\.m2\</code>
-					Nous avons configurer le fichier <code class="filename">pom.xml</code> puis nous l'avons exécuté. Maven a alors compilé et exécuté le projet.
+					Nous avons configuré le fichier <code class="filename">pom.xml</code> puis nous l'avons exécuté. Maven a alors compilé et exécuté le projet.
 					Maven pouvant générer un site web du projet à partir des sources, nous avons configuré le fichier pom.xml pour ajouter un plugin permettant la génération de rapports.
 					Maven permet également de générer des rapports d’analyse de la qualité du code source:
 					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">PMD qui analyse la qualité du code source Java</li><li class="listitem">CheckStyle permet de vérifier le style du code source</li><li class="listitem">QALab permet de récupérer les rapports de PMD et CheckStyle au cours du temps</li></ul></div><p>
@@ -177,5 +178,5 @@ client</code></pre></div></div><div class="section" title="Gestion des permissio
 					</div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/21-MavenWebsite.png" width="400" /></td></tr></table></div><div class="caption">
 						Site web générés par Maven
 					</div></div><div class="screenshot"><div><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="400"><tr><td><img src="screenshots/22-MavenReports.png" width="400" /></td></tr></table></div><div class="caption">
-						Rapports générés disponible sur le site web généré de Maven
+						Rapports générés disponibles sur le site web
 					</div></div></div></div></div></div></body></html>
