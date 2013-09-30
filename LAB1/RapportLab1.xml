@@ -17,86 +17,76 @@
   </articleinfo>
   
   <section>
-  	<title>Énoncé du sujet</title>
-	  <para>
-		  Recopier ici l'énoncé du sujet.
-  	</para>
-  </section>
-  
-  <section>
-    <title>Installation de l'environnement</title>
-    <section>
-      <title>Connexion à la machine virtuelle VMware</title>
-      <para>
-        On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire est réalisé sous environnement Windows et nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
-        <variablelist>
-          <varlistentry>
-            <term>adresse IP:</term>
-            <listitem>
-              <para>Log240-20133-14.logti.etsmtl.ca</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>port:</term>
-            <listitem>
-              <para>22</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>protocole:</term>
-            <listitem>
-              <para>SSH</para>
-            </listitem>
-          </varlistentry>
-        </variablelist>
-      </para>
-        
-      <screenshot>
+    <title>Connexion à la machine virtuelle VMware</title>
+    <para>
+      On se connecte à la machine virtuelle VMware pour s'assurer de son bon fonctionnement. Le laboratoire est réalisé sous environnement Windows et nous utilisons le terminal PuTTY pour nous connecter avec les paramètres suivants:
+      <variablelist>
+        <varlistentry>
+          <term>adresse IP:</term>
+          <listitem>
+            <para>Log240-20133-14.logti.etsmtl.ca</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>port:</term>
+          <listitem>
+            <para>22</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>protocole:</term>
+          <listitem>
+            <para>SSH</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+      <figure>
         <graphic width="275px" fileref="screenshots/01-ConnexionPutty.png"></graphic>
-        <caption>
+        <title>
           Connexion SSH au serveur Ubuntu en utilisant PuTTY
-        </caption>
-      </screenshot>      
-        
-      <para>
-        Un terminal s'ouvre alors et nous propose de nous connecter.
-        Nous utilisons les identifiants suivants:
-        <variablelist>
-          <varlistentry>
-            <term>login:</term>
-            <listitem>
-              <para>system</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>password:</term>
-            <listitem>
-              <para>SystemPass14</para>
-            </listitem>
-          </varlistentry>
-        </variablelist>
-        <note>
-          <para>
-            Sur un terminal UNIX, les mots de passe ne s'affichent pas lors de la saisie par soucis de sécurité, c'est pourquoi la sortie console suivante en est dépourvue.
-          </para>
-        </note>
-      </para>
+        </title>
+      </figure>    
+    
+    <para>
+      Un terminal s'ouvre alors et nous propose de nous connecter.
+      Nous utilisons les identifiants suivants:
+      <variablelist>
+        <varlistentry>
+          <term>login:</term>
+          <listitem>
+            <para>system</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>password:</term>
+          <listitem>
+            <para>SystemPass14</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <note>
+        <para>
+          Sur un terminal UNIX, les mots de passe ne s'affichent pas lors de la saisie par soucis de sécurité, c'est pourquoi la sortie console suivante en est dépourvue.
+        </para>
+      </note>
+    </para>
 
-      <screen>login as: <userinput>system</userinput>
+    <screen>login as: <userinput>system</userinput>
 system@Log240-20133-14.logti.etsmtl.ca's password:
 <computeroutput>Linux log240-20133-14 2.6.32-51-generic-pae 
 #113-Ubuntu SMP Wed Aug 21 20:02:16 UTC 2013 i686 GNU/Linux
 Ubuntu 10.04.4 LTS
 
 Welcome to Ubuntu!
- * Documentation:  https://help.ubuntu.com/
+* Documentation:  https://help.ubuntu.com/
 
-  System information as of Mon Sep 16 15:48:01 EDT 2013
+System information as of Mon Sep 16 15:48:01 EDT 2013
 
-  System load: 0.53              Memory usage: 18%   Processes:       75
-  Usage of /:  76.1% of 4.92GB   Swap usage:   0%    Users logged in: 0
+System load: 0.53              Memory usage: 18%   Processes:       75
+Usage of /:  76.1% of 4.92GB   Swap usage:   0%    Users logged in: 0
 
-  Graph this data and manage this system at https://landscape.canonical.com/
+Graph this data and manage this system at https://landscape.canonical.com/
 
 6 packages can be updated.
 3 updates are security updates.
@@ -107,163 +97,163 @@ Run 'do-release-upgrade' to upgrade to it.
 Last login: Mon Sep 16 15:45:09 2013 from logti-a3324-19.ens.ad.etsmtl.ca</computeroutput>
 system@log240-20133-14:~$</screen>
 
-      <note>
-        <para>
-          Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégée <symbol>$</symbol> par la suite.
-        </para>
-      </note>
+    <note>
       <para>
-        On constate que la machine virtuelle est correctement lancée et en état de fonctionner.
+        Par soucis de clarté, l'invite de commande du shell (prompt) sera abrégée <symbol>$</symbol> par la suite.
       </para>
-    </section>
-    <section>
-      <title>Gestionnaire de sources</title>
-		<section>
-		  <title>Configuration de SVN</title>
-		<para>
-		  Pour assurer le suivi du code source, nous utilisons le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <filename>/opt</filename> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
-		</para>
-	  
-		<screen>$ <userinput><command>cd</command> /opt</userinput>
+    </note>
+    <para>
+      On constate que la machine virtuelle est correctement lancée et en état de fonctionner.
+    </para>
+  </section>
+  <section>
+    <title>Gestionnaire de sources</title>
+	<section>
+	  <title>Configuration de SVN</title>
+	<para>
+	  Pour assurer le suivi du code source, nous utilisons le gestionnaire de sources Subversion (SVN). Nous commençons par changer les droits sur le dossier <filename>/opt</filename> qui sera notre dossier de travail pour lancer SVN en tant que daemon.
+	</para>
+  
+	<screen>$ <userinput><command>cd</command> /opt</userinput>
 $ <userinput><command>sudo /bin/chown</command> -R www-data:svnusers svn</userinput>
 [sudo] password for system:
 $ <userinput><command>sudo /bin/chmod</command> -R u+wrx,g+wrx,o-wrx svn</userinput>
 $ <userinput><command>sudo /usr/bin/svnserve</command> -d</userinput>
-		</screen>
-		
-		<para>
-		  On ajoute ensuite les différents utilisateurs:
-		  <variablelist>
-			<varlistentry>
-			  <term>client:</term>
-			  <listitem>
-				<para>L'utilisateur que notre client utilisera pour accéder au code</para>
-				<screen>
+	</screen>
+	
+	<para>
+	  On ajoute ensuite les différents utilisateurs:
+	  <variablelist>
+		<varlistentry>
+		  <term>client:</term>
+		  <listitem>
+			<para>L'utilisateur que notre client utilisera pour accéder au code</para>
+			<screen>
 $ <userinput><command>sudo /usr/sbin/useradd</command> client -G svnusers 
 -c "Utilisateur client (BudgetPersonnel2000)" -m</userinput>
 $ <userinput><command>sudo /usr/bin/passwd</command> client</userinput>
 Enter new UNIX password:
 Retype new UNIX password:
 <computeroutput>passwd: password updated successfully</computeroutput></screen>
-			  </listitem>
-			</varlistentry>
-			<varlistentry>
-			  <term>asma:</term>
-			  <listitem>
-				<para>L'utilisateur du développeur 1</para>
-				<screen>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term>asma:</term>
+		  <listitem>
+			<para>L'utilisateur du développeur 1</para>
+			<screen>
 $ <userinput><command>sudo /usr/sbin/useradd</command> asma -G svnusers 
 -c "Utilisateur developpeur (MaintenancePlus)" -m</userinput>
 $ <userinput><command>sudo /usr/bin/passwd</command> asma</userinput>
 Enter new UNIX password:
 Retype new UNIX password:
 <computeroutput>passwd: password updated successfully</computeroutput></screen>
-			  </listitem>
-			</varlistentry>
-			<varlistentry>
-			  <term>quentin:</term>
-			  <listitem>
-				<para>L'utilisateur du développeur 2</para>
-				<screen>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term>quentin:</term>
+		  <listitem>
+			<para>L'utilisateur du développeur 2</para>
+			<screen>
 $ <userinput><command>sudo /usr/sbin/useradd</command> quentin -G svnusers 
 -c "Utilisateur developpeur (MaintenancePlus)" -m</userinput>
 $ <userinput><command>sudo /usr/bin/passwd</command> quentin</userinput>
 Enter new UNIX password:
 Retype new UNIX password:
 <computeroutput>passwd: password updated successfully</computeroutput></screen>
-			  </listitem>
-			</varlistentry>
-		  </variablelist>
-		  
-		  <important>
-			<para>
-			  Tout les mots de passes utilisés sont identiques aux noms des utilisateurs. Il est évident que ceci ne constitue pas une bonne pratique de sécurité mais, dans un soucis de simplification du rapport, nous avons décidé de faire ainsi.
-			</para>
-		  </important>
+		  </listitem>
+		</varlistentry>
+	  </variablelist>
+	  
+	  <important>
+		<para>
+		  Tout les mots de passes utilisés sont identiques aux noms des utilisateurs. Il est évident que ceci ne constitue pas une bonne pratique de sécurité mais, dans un soucis de simplification du rapport, nous avons décidé de faire ainsi.
 		</para>
-		
-		<tip>
-		  <para>
-			Nous pouvons vérifier que ces utilisateurs ont bien été crées sur la VMware de la manière suivante:
-			<screen>$ <userinput><command>cat</command> /etc/passwd | grep "Utilisateur" | cut -d: -f1</userinput><computeroutput>
+	  </important>
+	</para>
+	
+	<tip>
+	  <para>
+		Nous pouvons vérifier que ces utilisateurs ont bien été crées sur la VMware de la manière suivante:
+		<screen>$ <userinput><command>cat</command> /etc/passwd | grep "Utilisateur" | cut -d: -f1</userinput><computeroutput>
 client
 asma
 quentin</computeroutput></screen>
-		  </para>
-		</tip>
-		  </section>
-		  <section>
-			<title>Import/Export du code source vers SVN</title>
-		    <para>Nous envoyons le code source de FinanceJ sur le dépôt SVN nouvellement configuré. 
-			Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
-			Dans un premier temps, nous créons un dossier <filename>Code</filename> contenant les dossiers <filename>branches</filename>, <filename>tags</filename> et <filename>trunk</filename>. Nous avons ajouté à ce dernier dossier les codes sources du projet FinanceJ.
-			<caution>
-			  <para>
-				Le vocabulaire de TortoiseSVN diffère de celui couramment utilisé: 
-				L'importation SVN est un envoi depuis un poste local vers le serveur et inversement concernant l'exportation. 
-				Afin de lever l'ambiguïté, nous utiliserons les termes classiques <emphasis>import/export</emphasis>.
-			  </para>
-			</caution>
-		  </para>
-
-        <screenshot>
-          <graphic width="300px" fileref="screenshots/04-ImportSVN.png"></graphic>
-          <caption>
-            Exportation du dépot en utilisant TortoiseSVN
-          </caption>
-        </screenshot>
-        
-        <screenshot>
-          <graphic width="200px" fileref="screenshots/05-ImportSVNPassword.png"></graphic>
-          <caption>
-            Confirmation du mot de passe SVN
-          </caption>
-        </screenshot>
-        
-        <screenshot>
-          <graphic width="400px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
-          <caption>
-            Résultat de l'exportation
-          </caption>
-        </screenshot>
-
-		<para>
-		  Nous vérifions ensuite que l'envoi a correctement fonctionné en essayant d'importer le code envoyé dans un second dossier en local.
-		  <note>
-		    <para>
-			  Nous aurions également pu effectuer un <command>ls</command> directement sur le serveur via PuTTY mais des restrictions sur les VMwares nous en empêchent.
-			</para>
-		  </note>
-		</para>
-
-        <screenshot>
-          <graphic width="300px" fileref="screenshots/07-TestExportSVN.png"></graphic>
-          <caption>
-            Vérification de l'importation dans le dossier <filename>Codebis</filename>
-          </caption>
-        </screenshot>
-        
-        <screenshot>
-          <graphic width="400px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
-          <caption>
-            Succès du test d'importation dans le dossier <filename>Codebis</filename>
-          </caption>
-        </screenshot>
+	  </para>
+	</tip>
 	  </section>
-	</section>
-	<section>
-	  <title>Système de suivi de projet</title>
 	  <section>
-	    <title>Configuration de Trac</title>
-        <para>
-		  Nous avons utilisé Trac, un système minimaliste de bug tracking et de wiki permettant la suivi de projet de développement.
-		  Tout d'abord, nous avons vérifié que Trac était correctement installé avec la bonne version:
+		<title>Import/Export du code source vers SVN</title>
+	    <para>Nous envoyons le code source de FinanceJ sur le dépôt SVN nouvellement configuré. 
+		Nous utilisons le logiciel TortoiseSVN pour réaliser cette opération.
+		Dans un premier temps, nous créons un dossier <filename>Code</filename> contenant les dossiers <filename>branches</filename>, <filename>tags</filename> et <filename>trunk</filename>. Nous avons ajouté à ce dernier dossier les codes sources du projet FinanceJ.
+		<caution>
+		  <para>
+			Le vocabulaire de TortoiseSVN diffère de celui couramment utilisé: 
+			L'importation SVN est un envoi depuis un poste local vers le serveur et inversement concernant l'exportation. 
+			Afin de lever l'ambiguïté, nous utiliserons les termes classiques <emphasis>import/export</emphasis>.
+		  </para>
+		</caution>
+	  </para>
+
+      <figure>
+        <graphic width="300px" fileref="screenshots/04-ImportSVN.png"></graphic>
+        <title>
+          Exportation du dépot en utilisant TortoiseSVN
+        </title>
+      </figure>
+      
+      <figure>
+        <graphic width="200px" fileref="screenshots/05-ImportSVNPassword.png"></graphic>
+        <title>
+          Confirmation du mot de passe SVN
+        </title>
+      </figure>
+      
+      <figure>
+        <graphic width="400px" fileref="screenshots/06-ImportSVNSuccess.png"></graphic>
+        <title>
+          Résultat de l'exportation
+        </title>
+      </figure>
+
+	<para>
+	  Nous vérifions ensuite que l'envoi a correctement fonctionné en essayant d'importer le code envoyé dans un second dossier en local.
+	  <note>
+	    <para>
+		  Nous aurions également pu effectuer un <command>ls</command> directement sur le serveur via PuTTY mais des restrictions sur les VMwares nous en empêchent.
 		</para>
-		<screen>$ <userinput><command>tracd</command> --version</userinput>
+	  </note>
+	</para>
+
+      <figure>
+        <graphic width="300px" fileref="screenshots/07-TestExportSVN.png"></graphic>
+        <title>
+          Vérification de l'importation dans le dossier <filename>Codebis</filename>
+        </title>
+      </figure>
+      
+      <figure>
+        <graphic width="400px" fileref="screenshots/08-TestExportSVNSuccess.png"></graphic>
+        <title>
+          Succès du test d'importation dans le dossier <filename>Codebis</filename>
+        </title>
+      </figure>
+  </section>
+</section>
+<section>
+  <title>Système de suivi de projet</title>
+  <section>
+    <title>Configuration de Trac</title>
+      <para>
+	  Nous avons utilisé Trac, un système minimaliste de bug tracking et de wiki permettant la suivi de projet de développement.
+	  Tout d'abord, nous avons vérifié que Trac était correctement installé avec la bonne version:
+	</para>
+	<screen>$ <userinput><command>tracd</command> --version</userinput>
 <computeroutput>tracd 0.11.7</computeroutput></screen>
 
-        <para>Nous créons ensuite les 3 utilisateurs Trac de la manière suivante:</para>
-		<screen>
+      <para>Nous créons ensuite les 3 utilisateurs Trac de la manière suivante:</para>
+	<screen>
 $ <userinput><command>cd</command> trac/conf/</userinput>
 $ <userinput><command>sudo htpasswd</command> trac.htpasswd client</userinput>
 <computeroutput>New password:
@@ -271,201 +261,200 @@ Re-type new password:
 Adding password for user client
 </computeroutput></screen>
 
-		<screen>
+	<screen>
 $ <userinput><command>sudo htpasswd</command> trac.htpasswd asma</userinput>
 <computeroutput>New password:
 Re-type new password:
 Adding password for user asma
 </computeroutput></screen>
 
-		<screen>
+	<screen>
 $ <userinput><command>sudo htpasswd</command> trac.htpasswd quentin</userinput>
 <computeroutput>New password:
 Re-type new password:
 Adding password for user quentin
 </computeroutput></screen>
 
-		<tip>
-		  <para>Nous pouvons vérifier que les utilisateurs ont correctement été rajoutés de la manière suivante:</para>
-		  <screen>
+	<tip>
+	  <para>Nous pouvons vérifier que les utilisateurs ont correctement été rajoutés de la manière suivante:</para>
+	  <screen>
 $ <userinput><command>cat</command> trac.htpasswd | cut -d: -f1</userinput>
 <computeroutput>admin
 asma
 quentin
 client</computeroutput></screen>
-		</tip>
-		</section>
-		<section>
-		  <title>Gestion des permissions de Trac</title>
-		<para>
-		  Nous nous sommes ensuite connectés à l'interface web de Trac. Nous nous sommes connectés en tant qu'administrateur avec les identifiants par défaut suivants:
-		  <variablelist>
-            <varlistentry>
-              <term>login:</term>
-              <listitem>
-                <para>admin</para>
-              </listitem>
-            </varlistentry>
-            <varlistentry>
-              <term>password:</term>
-              <listitem>
-                <para>admin</para>
-              </listitem>
-            </varlistentry>
-          </variablelist>
-		</para>
-		<screenshot>
-          <graphic width="400px" fileref="screenshots/10-TracLogin.png"></graphic>
-          <caption>
-            Connexion à l'interface web de Trac en admin
-          </caption>
-        </screenshot>
+	</tip>
+	</section>
+	<section>
+	  <title>Gestion des permissions de Trac</title>
+	<para>
+	  Nous nous sommes ensuite connectés à l'interface web de Trac. Nous nous sommes connectés en tant qu'administrateur avec les identifiants par défaut suivants:
+	  <variablelist>
+          <varlistentry>
+            <term>login:</term>
+            <listitem>
+              <para>admin</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>password:</term>
+            <listitem>
+              <para>admin</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+	</para>
+	<figure>
+        <graphic width="400px" fileref="screenshots/10-TracLogin.png"></graphic>
+        <title>
+          Connexion à l'interface web de Trac en admin
+        </title>
+      </figure>
 
+	<para>
+	  Nous avons ensuite définit les permissions de chaque utilisateur de Trac en suivant les contraintes suivantes:
+	  <itemizedlist>
+		<listitem>Il n'y a qu'un seul développeur ayant les droits d'administrateur (asma)</listitem>
+		<listitem>Les développeurs doivent avoir accès à la plupart des fonctionnalités exceptés les tâches d'administration</listitem>
+		<listitem>Le client peut uniquement consulter Trac et créer des tickets pour remonter des anomalies aux développeurs</listitem>
+	  </itemizedlist>
+	</para>
+	<note>
+	  <para>
+	    Afin d'éviter de redéfinir chaque permission pour chaque nouvel utilisateur éventuel, nous avons décidé de créer deux groupes de permissions:
+		<itemizedlist>
+		  <listitem>developpers</listitem>
+		  <listitem>clients</listitem>
+		</itemizedlist>
+		Ceci nous permet d'ajouter simplement des développeurs ou des comptes clients tout en conservant des permissions cohérentes.
+	  </para>
+	</note>
+      <figure>
+        <graphic width="400px" fileref="screenshots/11-TracPermissions.png"></graphic>
+        <title>
+          Modifications des permissions clients et développeurs
+        </title>
+      </figure>
+	</section>
+	<section>
+	  <title>Fonctionnalités de Trac</title>
+	  <section>
+	    <title>Tickets</title>
 		<para>
-		  Nous avons ensuite définit les permissions de chaque utilisateur de Trac en suivant les contraintes suivantes:
+	      Les tickets dans Trac peuvent être utilisés pour assigner des tâches de projet, pour faire des requêtes, des reports de bugs et du support logiciel.
+	  	  Ici nous avons créé 2 requêtes / tickets / tâches. À l’aide de Trac, nous avons la possibilité de:
 		  <itemizedlist>
-			<listitem>Il n'y a qu'un seul développeur ayant les droits d'administrateur (asma)</listitem>
-			<listitem>Les développeurs doivent avoir accès à la plupart des fonctionnalités exceptés les tâches d'administration</listitem>
-			<listitem>Le client peut uniquement consulter Trac et créer des tickets pour remonter des anomalies aux développeurs</listitem>
+		    <listitem>Définir la priorité de la tâche</listitem>
+			<listitem>Préciser le composant affecté</listitem>
+			<listitem>Estimer le nombre d'heures pour la tâche</listitem>
+			<listitem>Préciser la version</listitem>
+			<listitem>Ajouter des commentaires</listitem>
+			<listitem>Joindre des fichiers</listitem>
+			<listitem>etc.</listitem>
 		  </itemizedlist>
 		</para>
-		<note>
-		  <para>
-		    Afin d'éviter de redéfinir chaque permission pour chaque nouvel utilisateur éventuel, nous avons décidé de créer deux groupes de permissions:
-			<itemizedlist>
-			  <listitem>developpers</listitem>
-			  <listitem>clients</listitem>
-			</itemizedlist>
-			Ceci nous permet d'ajouter simplement des développeurs ou des comptes clients tout en conservant des permissions cohérentes.
-		  </para>
-		</note>
-        <screenshot>
-          <graphic width="400px" fileref="screenshots/11-TracPermissions.png"></graphic>
-          <caption>
-            Modifications des permissions clients et développeurs
-          </caption>
-        </screenshot>
-		</section>
+		<figure>
+		  <graphic width="400px" fileref="screenshots/12-TracTicket1.png"></graphic>
+		  <graphic width="400px" fileref="screenshots/13-TracTicket2.png"></graphic>
+		  <title>
+			Création de tickets Trac
+		  </title>
+		</figure>
+	  </section><!-- section Tickets -->
+	  <section>
+	    <title>Composants</title>
+		<para>
+		  Les composants sont les systèmes/modules qui peuvent être affectés par des problèmes et donc être concernés par les tickets.
+		  Nous avons crée 2 composants:
+		  <itemizedlist>
+		    <listitem>code</listitem>
+			<listitem>site web</listitem>
+		  </itemizedlist>
+		</para>
+		<figure>
+		  <graphic width="400px" fileref="screenshots/14-TracComposant1.png"></graphic>
+		  <graphic width="400px" fileref="screenshots/15-TracComposant2.png"></graphic>
+		  <title>
+				Création de composants Trac
+		  </title>
+		</figure>
+	  </section><!-- section Composants -->
+	  <section>
+	    <title>Milestones</title>
+		<para>
+		  Les milestones sont les étapes importantes de la maintenance du projet.
+		</para>
+			<figure>
+				<graphic width="400px" fileref="screenshots/16-TracMilestones.png"></graphic>
+				<title>
+					Création de milestones Trac
+				</title>
+			</figure>
+	  </section><!-- section Milestones -->
 		<section>
-		  <title>Fonctionnalités de Trac</title>
-		  <section>
-		    <title>Tickets</title>
+		  <title>Versions</title>
 			<para>
-		      Les tickets dans Trac peuvent être utilisés pour assigner des tâches de projet, pour faire des requêtes, des reports de bugs et du support logiciel.
-		  	  Ici nous avons créé 2 requêtes / tickets / tâches. À l’aide de Trac, nous avons la possibilité de:
-			  <itemizedlist>
-			    <listitem>Définir la priorité de la tâche</listitem>
-				<listitem>Préciser le composant affecté</listitem>
-				<listitem>Estimer le nombre d'heures pour la tâche</listitem>
-				<listitem>Préciser la version</listitem>
-				<listitem>Ajouter des commentaires</listitem>
-				<listitem>Joindre des fichiers</listitem>
-				<listitem>etc.</listitem>
-			  </itemizedlist>
+			  Nous considerons que les versions représenteront les 5 laboratoires
 			</para>
-			<screenshot>
-			  <graphic width="400px" fileref="screenshots/12-TracTicket1.png"></graphic>
-			  <graphic width="400px" fileref="screenshots/13-TracTicket2.png"></graphic>
-			  <caption>
-				Création de tickets Trac
-			  </caption>
-			</screenshot>
-		  </section><!-- section Tickets -->
-		  <section>
-		    <title>Composants</title>
-			<para>
-			  Les composants sont les systèmes/modules qui peuvent être affectés par des problèmes et donc être concernés par les tickets.
-			  Nous avons crée 2 composants:
-			  <itemizedlist>
-			    <listitem>code</listitem>
-				<listitem>site web</listitem>
-			  </itemizedlist>
-			</para>
-			<screenshot>
-			  <graphic width="400px" fileref="screenshots/14-TracComposant1.png"></graphic>
-			  <graphic width="400px" fileref="screenshots/15-TracComposant2.png"></graphic>
-			  <caption>
-					Création de composants Trac
-			  </caption>
-			</screenshot>
-		  </section><!-- section Composants -->
-		  <section>
-		    <title>Milestones</title>
-			<para>
-			  Les milestones sont les étapes importantes de la maintenance du projet.
-			</para>
-				<screenshot>
-					<graphic width="400px" fileref="screenshots/16-TracMilestones.png"></graphic>
-					<caption>
-						Création de milestones Trac
-					</caption>
-				</screenshot>
-		  </section><!-- section Milestones -->
-			<section>
-			  <title>Versions</title>
-				<para>
-				  Nous considerons que les versions représenteront les 5 laboratoires
-				</para>
-				<screenshot>
-					<graphic width="400px" fileref="screenshots/17-TracVersions.png"></graphic>
-					<caption>
-						Création de versions Trac
-					</caption>
-				</screenshot>
-			</section> <!-- section Versions -->
-		</section><!-- section Fonctionnalités de Trac -->
-    </section><!-- section Systeme de suivi de projet -->
+			<figure>
+				<graphic width="400px" fileref="screenshots/17-TracVersions.png"></graphic>
+				<title>
+					Création de versions Trac
+				</title>
+			</figure>
+		</section> <!-- section Versions -->
+	</section><!-- section Fonctionnalités de Trac -->
+  </section><!-- section Systeme de suivi de projet -->
+	<section>
+	  <title>Gestionnaire de projet</title>
 		<section>
-		  <title>Gestionnaire de projet</title>
-			<section>
-			  <title>Configuration Maven</title>
-				<para>
-					Nous avons déplacé le fichier <filename>settings.xml</filename> fourni dans le répertoire <filename>C:\Documents and Settings\am03450\.m2\</filename>
-					Nous avons configuré le fichier <filename>pom.xml</filename> puis nous l'avons exécuté. Maven a alors compilé et exécuté le projet.
-					Maven pouvant générer un site web du projet à partir des sources, nous avons configuré le fichier pom.xml pour ajouter un plugin permettant la génération de rapports.
-					Maven permet également de générer des rapports d’analyse de la qualité du code source:
-					<itemizedlist>
-						<listitem>PMD qui analyse la qualité du code source Java</listitem>
-						<listitem>CheckStyle permet de vérifier le style du code source</listitem>
-					  <listitem>QALab permet de récupérer les rapports de PMD et CheckStyle au cours du temps</listitem>
-					</itemizedlist>
-				</para>
-				<para>
-					Nous avons ensuite configuré Maven afin qu’il puisse ajouter au site web du projet les informations provenant de Trac et SVN. 
-					Pour faire cela, nous avons ajouté des plugins au fichier <filename>settings.xml</filename> ainsi qu’au <filename>pom.xml</filename>.
-					Les rapports produits par QALab sont générés sur le site web du projet par Maven dans la section "Projects Reports".
-				</para>
-				<screenshot>
-					<graphic width="200px" fileref="screenshots/18-MavenCompilation.png"></graphic>
-					<caption>
-						Compilation du projet FinanceJ par Maven
-					</caption>
-				</screenshot>
-				<screenshot>
-					<graphic width="200px" fileref="screenshots/19-Application.png"></graphic>
-					<caption>
-						Code compilé et exécuté par Maven
-					</caption>
-				</screenshot>
-				<screenshot>
-					<graphic width="200px" fileref="screenshots/20-MavenCompilationWebsite.png"></graphic>
-					<caption>
-						Compilation du site web par Maven
-					</caption>
-				</screenshot>
-				<screenshot>
-					<graphic width="400px" fileref="screenshots/21-MavenWebsite.png"></graphic>
-					<caption>
-						Site web générés par Maven
-					</caption>
-				</screenshot>
-				<screenshot>
-					<graphic width="400px" fileref="screenshots/22-MavenReports.png"></graphic>
-					<caption>
-						Rapports générés disponibles sur le site web
-					</caption>
-				</screenshot>
-			</section><!-- section configuration Maven -->
-		</section><!-- section Maven -->
-  </section>
+		  <title>Configuration Maven</title>
+			<para>
+				Nous avons déplacé le fichier <filename>settings.xml</filename> fourni dans le répertoire <filename>C:\Documents and Settings\am03450\.m2\</filename>
+				Nous avons configuré le fichier <filename>pom.xml</filename> puis nous l'avons exécuté. Maven a alors compilé et exécuté le projet.
+				Maven pouvant générer un site web du projet à partir des sources, nous avons configuré le fichier pom.xml pour ajouter un plugin permettant la génération de rapports.
+				Maven permet également de générer des rapports d’analyse de la qualité du code source:
+				<itemizedlist>
+					<listitem>PMD qui analyse la qualité du code source Java</listitem>
+					<listitem>CheckStyle permet de vérifier le style du code source</listitem>
+				  <listitem>QALab permet de récupérer les rapports de PMD et CheckStyle au cours du temps</listitem>
+				</itemizedlist>
+			</para>
+			<para>
+				Nous avons ensuite configuré Maven afin qu’il puisse ajouter au site web du projet les informations provenant de Trac et SVN. 
+				Pour faire cela, nous avons ajouté des plugins au fichier <filename>settings.xml</filename> ainsi qu’au <filename>pom.xml</filename>.
+				Les rapports produits par QALab sont générés sur le site web du projet par Maven dans la section "Projects Reports".
+			</para>
+			<figure>
+				<graphic width="200px" fileref="screenshots/18-MavenCompilation.png"></graphic>
+				<title>
+					Compilation du projet FinanceJ par Maven
+				</title>
+			</figure>
+			<figure>
+				<graphic width="200px" fileref="screenshots/19-Application.png"></graphic>
+				<title>
+					Code compilé et exécuté par Maven
+				</title>
+			</figure>
+			<figure>
+				<graphic width="200px" fileref="screenshots/20-MavenCompilationWebsite.png"></graphic>
+				<title>
+					Compilation du site web par Maven
+				</title>
+			</figure>
+			<figure>
+				<graphic width="400px" fileref="screenshots/21-MavenWebsite.png"></graphic>
+				<title>
+					Site web générés par Maven
+				</title>
+			</figure>
+			<figure>
+				<graphic width="400px" fileref="screenshots/22-MavenReports.png"></graphic>
+				<title>
+					Rapports générés disponibles sur le site web
+				</title>
+			</figure>
+		</section><!-- section configuration Maven -->
+	</section><!-- section Maven -->
 </article>
