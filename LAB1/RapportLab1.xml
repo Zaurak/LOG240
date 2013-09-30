@@ -288,7 +288,7 @@ client</computeroutput></screen>
 	<section>
 	  <title>Gestion des permissions de Trac</title>
 	<para>
-	  Nous nous sommes ensuite connectés à l'interface web de Trac. Nous nous sommes connectés en tant qu'administrateur avec les identifiants par défaut suivants:
+	  Nous nous sommes ensuite connectés à l'interface web de Trac à l'adresse <systemitem class="ipaddress">log240-20133-14.logti.etsmtl.ca/trac</systemitem>. Nous nous sommes connectés en tant qu'administrateur avec les identifiants par défaut suivants:
 	  <variablelist>
           <varlistentry>
             <term>login:</term>
@@ -372,8 +372,7 @@ client</computeroutput></screen>
 		  </itemizedlist>
 		</para>
 		<figure>
-		  <graphic width="400px" fileref="screenshots/14-TracComposant1.png"></graphic>
-		  <graphic width="400px" fileref="screenshots/15-TracComposant2.png"></graphic>
+		  <graphic width="200px" fileref="screenshots/14-TracComposants.png"></graphic>
 		  <title>
 				Création de composants Trac
 		  </title>
@@ -456,5 +455,171 @@ client</computeroutput></screen>
 				</title>
 			</figure>
 		</section><!-- section configuration Maven -->
+		<section>
+		  <title>Analyses des rapports</title>
+		  <para>
+		    Nous avons généré différents rapports pour auditer la qualité du code. 
+		    Nous avons notamment utilisé CheckStyle et PMD dont les rapports ont été générés par Maven.
+		  </para>
+		  <section>
+		    <title>CheckStyle</title>
+	      <figure>
+	        <graphic width="400px" fileref="screenshots/23-CheckStyleReport.png"/>
+	        <title>Rapports CheckStyle analysant les problèmes de styles (nommage, indentation, etc.)</title>
+	      </figure>
+	      <para>
+	        CheckStyle identifie les types d'erreurs suivants:
+	        <itemizedlist>
+	          <listitem>
+	            <para>
+	              Javadoc: Absence de commentaires, manquement d'un paramètre, mauvais formatage etc.
+	            </para>
+	            <para>
+	              Ceci a un impact très négatif sur la maintenabilité car cela empêche de futurs développeurs d'analyser le code pour le maintenir sans avoir à rentrer dans le détail du code.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              Respect des conventions de codage: Convention de nommage des méthodes, classes, attributs etc.
+	            </para>
+	            <para>
+	              Il est beaucoup plus aisé de se repérer dans un code quand les conventions de nommages sont respectées. Une syntaxe particulière pour chaque développeur peut mener à des incompréhensions, surtout quand la casse a un sens pour différencier classe, objet, attributs, variables locales etc.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              Formatage du code: Indentation, nombre de caractères par ligne, espacement entre caractères etc.
+	            </para>
+	            <para>
+	              Un code est plus lisible s'il n'est pas trop chargé. Idéalement en dessous de 80 caractères par ligne, un développeur peut même lire son code sur des terminaux étroits ou avec plusieurs pages côte à côte sur un écran large. De plus, les niveaux d'indentations permettent de repérer facilement les unités logiques, ce qui facilite la maintenance.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              Rigueur du code: Absence de mots clé abstract/final quand c'est possible, utilisation du private et des accesseurs, optimisations des imports etc.
+	            </para>
+	            <para>
+	              La rigueur dans l'utilisation des mots clé de restrictions (abstract, final, private etc.) permet de limiter l'impact de comportement inattendu en spécifiant plus précisément la portée d'action de l'élèment concerné. Sur le long terme, négliger d'utiliser ces mots clés peut créer des défauts difficiles à trouver.
+	            </para>
+	          </listitem>
+	        </itemizedlist>
+	        Les erreurs les plus récurrentes dans ce code sont:
+	        <itemizedlist>
+	        	<listitem>
+	            <para>
+	              LineLength (341 occurences) : Trop de caractères sur une ligne nuisent à la lisibilité
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              FileTabCharacter (326 occurences) : Des tabulations sont présentes dans les lignes de code.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              FinalParameters (139 occurences) : Des paramètres pourraient être constants et ne le sont pas.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              MagicNumber (130 occurences) : Utilisation de constantes numériques non-nommée ou mal documentée.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              JavadocMethod (102 occurences) : Manque d'un commentaire javadoc
+	            </para>
+	          </listitem>
+	        </itemizedlist>
+	      </para>
+	      <para>
+	        Les mesures correctives sont les suivantes:
+	        <itemizedlist>
+	          <listitem>
+	            <para>
+	              Mettre en place une politique de commentaire systèmatique et rigoureuse pour les méthodes. Le format type d'un commentaire doit être suivi pour respecter les règles de CheckStyle.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              Imposer une convention de nommage des variables, notamment au niveau de la casse et des caractères spéciaux autorisés.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              L'utilisation d'un outil de formatage automatique peut être une bonne solution pour forcer une indentation correcte ainsi qu'un formatage régulier.
+	            </para>
+	          </listitem>
+	          <listitem>
+	            <para>
+	              Des revues de codes régulières permettent de détecter ce types d'erreurs et des les corriger rapidement avant qu'elles ne s'accumulent.
+	            </para>
+	          </listitem>
+	        </itemizedlist>
+	      </para>
+		  </section>
+		  <section>
+		    <title>PMD</title>
+		    <figure>
+		      <graphic width="400px" fileref="screenshots/24-PMDReport.png"/>
+		      <title>Rapports PMD analysant les problèmes de codages (portée des variables, initialisations etc.)</title>
+		    </figure>
+		    <para>
+		      PMD identifie les types d'errreur suivants:
+		      <itemizedlist>
+		        <listitem>
+		          <para>
+		            Les problèmes de portées de variables.
+		          </para>
+		          <para>
+		            Cela a un impact négatif sur la maintenance car cela peut entraîner des comportements inattendus de la part d'un objet si son état interne devient incohérent.
+		          </para>
+		        </listitem>
+		        <listitem>
+		          <para>
+		            Les problèmes d'initialisation des attributs/variables.
+		          </para>
+		          <para>
+		            Si l'état d'un objet n'est pas cohérent dès l'initialisation, cela peut entraîner facilement des erreurs où l'on s'attend à ce que l'objet soit utilisable alors qu'il doit encore être initialisé.
+		          </para>
+		        </listitem>
+		        <listitem>
+		          <para>
+		            La libération des ressources.
+		          </para>
+		          <para>
+		            Sur le long terme, ce type d'erreurs peut entraîner des problèmes de performances très gênants pour l'utilisateur.
+		          </para>
+		        </listitem>
+		        <listitem>
+		          <para>
+		            Optimisations diverses (ex: refactor d'un if...else..., utilisation des valeurs littérales avant les chaînes pour les comparaisons etc.)
+		          </para>
+		          <para>
+		            L'utilisation de ces techniques d'optimisations peut rendre le code plus clair, plus performant et plus maintenable.
+		          </para>
+		        </listitem>
+		      </itemizedlist>
+		    </para>
+		  </section>
+		</section>
+		<section>
+		  <title>QALab</title>
+		  <figure>
+		    <graphic width="400px" fileref="screenshots/25-QALabReport1.png"/>
+		    <title>Rapport de synthèse QALab sans modification du code (pas de progression à afficher)</title>
+		  </figure>
+		  <figure>
+		    <graphic width="400px" fileref="screenshots/26-CheckStyleDetails.png"/>
+		    <title>Erreur CheckStyle que nous avons corrigé</title>
+		  </figure>
+		  <figure>
+		    <graphic width="400px" fileref="screenshots/27-QALabReport2.png"/>
+		    <title>Rapport de synthèse QALab avec modifications du code (progression de la qualité)</title>
+		  </figure>
+		  <para>
+		    Nous avons effectué une modification trop mineure pour que la progression se voit sur la prise d'écran. Cependant, dans le détail en dessous du graphe, nous observous qu'une des erreurs a bien disparue depuis la précédente version.
+		  </para>
+		</section>
 	</section><!-- section Maven -->
 </article>
