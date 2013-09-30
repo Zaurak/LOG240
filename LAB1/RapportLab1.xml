@@ -602,8 +602,7 @@ client</computeroutput></screen>
 		      </itemizedlist>
 		    </para>
 		  </section>
-		</section>
-		<section>
+		  		<section>
 		  <title>QALab</title>
 		  <figure>
 		    <graphic width="400px" fileref="screenshots/25-QALabReport1.png"/>
@@ -620,6 +619,7 @@ client</computeroutput></screen>
 		  <para>
 		    Nous avons effectué une modification trop mineure pour que la progression se voit sur la prise d'écran. Cependant, dans le détail en dessous du graphe, nous observous qu'une des erreurs a bien disparue depuis la précédente version.
 		  </para>
+		</section>
 		</section>
 	</section><!-- section Maven -->
 </article>
